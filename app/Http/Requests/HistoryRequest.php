@@ -29,7 +29,7 @@ class HistoryRequest extends FormRequest
         ];
 
         if ($this->isMethod('post')) {
-            $rules[] = ['gambar' => 'required|image|mimes:png,jpg,jpeg'];
+            $rules[] = ['gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'];
         }
 
         return $rules;

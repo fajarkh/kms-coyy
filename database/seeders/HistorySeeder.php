@@ -14,9 +14,6 @@ class HistorySeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 0; $i < 100; $i++) {
-            History::create(['judul' => 'judul' . $i, 'konten' => 'ini konten', 'kategori_id' => 1, 'gambar' => 'judul1.jpg']);
-        }
-        // History::create(['judul' => 'judul', 'konten' => 'ini konten', 'kategori_id' => 1, 'gambar' => 'judul1.jpg']);
+        History::create(['judul' => 'judul', 'konten' => 'ini konten', 'kategori_id' => 1, 'gambar' => 'judul1.jpg']);
     }
 }

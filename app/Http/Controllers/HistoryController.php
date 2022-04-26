@@ -12,7 +12,6 @@ class HistoryController extends Controller
     use UploadFileTrait;
     public function index(HistoryDataTable $dataTable)
     {
-        // dd($dataTable->render('history.index'));
         return $dataTable->render('history.index');
     }
 

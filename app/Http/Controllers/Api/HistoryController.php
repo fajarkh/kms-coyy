@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\HistoryRequest;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\History;
 use App\Http\Resources\HistoryResource;
@@ -13,7 +13,7 @@ class HistoryController extends Controller
 {
     public function index()
     {
-        $item = History::latest()->paginate(5);
+        $item = History::latest()->paginate(10);
         if (!$item->isEmpty()) {
             return new HistoryResource(200, 'Sukses', $item);
         } else {
@@ -21,17 +21,8 @@ class HistoryController extends Controller
         }
     }
 
-    public function store(Request $request)
+    public function store(HistoryRequest $request)
     {
-        $validator = Validator::make($request->all(), [
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'judul' => 'required',
-            'konten' => 'required',
-        ]);
-        if ($validator->fails()) {
-            return response()->json($validator->errors(), 422);
-        }
-
         $image = $request->file('gambar');
         $image->storeAs('public/history', $image->hashName());
         $data = History::create([
