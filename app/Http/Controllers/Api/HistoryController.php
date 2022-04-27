@@ -42,17 +42,10 @@ class HistoryController extends Controller
         }
     }
 
-    public function update($id)
+    public function update(HistoryRequest $request, $id)
     {
         $request = request();
         if ($item = History::find($id)) {
-            $validator = Validator::make($request->all(), [
-                'judul' => 'required',
-                'konten' => 'required',
-            ]);
-            if ($validator->fails()) {
-                return response()->json($validator->errors(), 422);
-            }
             if ($request->hasFile('gambar')) {
                 $image = $request->file('gambar');
                 $image->storeAs('public/history', $image->hashName());
