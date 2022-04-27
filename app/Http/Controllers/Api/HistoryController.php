@@ -8,9 +8,11 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
 use App\Models\History;
 use App\Http\Resources\HistoryResource;
+use App\Traits\UploadFileTrait;
 
 class HistoryController extends Controller
 {
+    use UploadFileTrait;
     public function index()
     {
         $item = History::latest()->paginate(10);
@@ -23,10 +25,8 @@ class HistoryController extends Controller
 
     public function store(HistoryRequest $request)
     {
-        $image = $request->file('gambar');
-        $image->storeAs('public/history', $image->hashName());
         $data = History::create([
-            'gambar' => $image->hashName(),
+            'gambar' => $this->upload('history', $request->file('gambar')),
             'judul' => $request->judul,
             'konten' => $request->konten,
         ]);
@@ -44,15 +44,10 @@ class HistoryController extends Controller
 
     public function update(HistoryRequest $request, $id)
     {
-        $request = request();
         if ($item = History::find($id)) {
             if ($request->hasFile('gambar')) {
-                $image = $request->file('gambar');
-                $image->storeAs('public/history', $image->hashName());
-                Storage::delete('public/history/' . $item->gambar);
-
                 $item->update([
-                    'gambar' => $image->hashName(),
+                    'gambar' => $this->upload('history', $request->file('gambar'), $item->gambar),
                     'judul' => $request->judul,
                     'konten' => $request->konten,
                 ]);
@@ -71,7 +66,7 @@ class HistoryController extends Controller
     public function destroy($id)
     {
         if ($item = History::find($id)) {
-            Storage::delete('public/history/' . $item->gambar);
+            $this->deleteFile('history', $item->gambar);
             $item->delete();
             return new HistoryResource(200, 'Data Post Berhasil Dihapus!');
         } else {
