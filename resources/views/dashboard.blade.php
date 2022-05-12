@@ -7,6 +7,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
+                    {{-- <x-button type="success" title="Tambah Data" /> --}}
                 </div>
             </div>
         </div>
