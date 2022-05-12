@@ -7,7 +7,13 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    {{-- <x-button type="success" title="Tambah Data" /> --}}
+                    <x-modal title="In" id="ayam">
+                        <div class="alert alert-danger" role="alert">
+                            Are you sure you want to do this?
+                        </div>
+                    </x-modal>
+
+                    <x-button type="success" title="Modal" toggle="ayam" />
                 </div>
             </div>
         </div>

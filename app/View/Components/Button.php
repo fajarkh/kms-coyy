@@ -13,13 +13,24 @@ class Button extends Component
      */
     public $type;
     public $title;
+    public $toggle;
 
-    public function __construct($type, $title)
+    public function __construct($type, $title, $toggle = null)
     {
         $this->type = $type;
         $this->title = $title;
+        $this->title = $title;
+        $this->toggle = $toggle;
     }
 
+    public function isToggle(): String
+    {
+        if ($this->toggle) {
+            return 'data-toggle=modal data-target=#' . $this->toggle;
+        } else {
+            return '';
+        }
+    }
     /**
      * Get the view / contents that represent the component.
      *
