@@ -19,12 +19,21 @@
                     <x-button type="success" title="Modal" openModal="ayam" />
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-12">
+                    <x-info-box bg="info" icon="fa-envelope" title="coba" subtitle="100" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-6">
+                    {{-- <x-small-box /> --}}
+                </div>
+            </div>
         </div>
     </div>
 @endsection
 
 @push('req-scripts')
     {{-- <script src="{{ asset('lte/plugins/dropzone/min/dropzone.min.js') }}"></script> --}}
-    <script>
-    </script>
+    <script></script>
 @endpush
