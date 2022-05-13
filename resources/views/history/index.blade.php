@@ -27,7 +27,7 @@
         $.fn.dataTable.ext.errMode = 'throw';
 
         $(document).on("click", ".btn-delete", function() {
-            sweetAlertComponents({
+            sweetAlertComponent({
                 type: 'delete',
                 form: $(this).closest("form")
             });

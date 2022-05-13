@@ -1,4 +1,4 @@
-function sweetAlertComponents(arg) {
+function sweetAlertComponent(arg) {
     if (arg.type === 'delete') {
         Swal.fire({
             title: 'Anda Yakin?',
