@@ -2,6 +2,9 @@
 @section('content-header')
     Dashboard
 @endsection
+@push('req-css')
+    {{-- <link rel="stylesheet" href="{{ asset('lte/plugins/dropzone/min/dropzone.min.css') }}"> --}}
+@endpush
 @section('content')
     <div class="row justify-content-center">
         <div class="col-md-12">
@@ -19,3 +22,9 @@
         </div>
     </div>
 @endsection
+
+@push('req-scripts')
+    {{-- <script src="{{ asset('lte/plugins/dropzone/min/dropzone.min.js') }}"></script> --}}
+    <script>
+    </script>
+@endpush
