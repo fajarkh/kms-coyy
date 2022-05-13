@@ -13,20 +13,20 @@ class Button extends Component
      */
     public $type;
     public $title;
-    public $toggle;
+    public $openModal;
 
-    public function __construct($type, $title, $toggle = null)
+    public function __construct($type, $title, $openModal = null)
     {
         $this->type = $type;
         $this->title = $title;
         $this->title = $title;
-        $this->toggle = $toggle;
+        $this->openModal = $openModal;
     }
 
     public function isToggle(): String
     {
-        if ($this->toggle) {
-            return 'data-toggle=modal data-target=#' . $this->toggle;
+        if ($this->openModal) {
+            return 'data-toggle=modal data-target=#' . $this->openModal;
         } else {
             return '';
         }

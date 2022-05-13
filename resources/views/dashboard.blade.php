@@ -13,7 +13,7 @@
                         </div>
                     </x-modal>
 
-                    <x-button type="success" title="Modal" toggle="ayam" />
+                    <x-button type="success" title="Modal" openModal="ayam" />
                 </div>
             </div>
         </div>

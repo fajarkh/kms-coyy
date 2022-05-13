@@ -19,27 +19,18 @@
     <script src="{{ asset('lte/plugins/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('lte/plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
     <script src="{{ asset('vendor/datatables/buttons.server-side.js') }}"></script>
+    <script src="{{ asset('js/sweetalert-components.js') }}"></script>
 
     {{ $dataTable->scripts() }}
-    
+
     <script>
         $.fn.dataTable.ext.errMode = 'throw';
 
         $(document).on("click", ".btn-delete", function() {
-            var form = $(this).closest("form");
-            Swal.fire({
-                title: 'Anda Yakin?',
-                text: "Anda tidak akan dapat mengembalikan ini!",
-                type: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Ya, Hapus'
-            }).then((result) => {
-                if (result.value) {
-                    form.submit();
-                }
-            })
+            sweetAlertComponents({
+                type: 'delete',
+                form: $(this).closest("form")
+            });
         })
     </script>
 @endpush
