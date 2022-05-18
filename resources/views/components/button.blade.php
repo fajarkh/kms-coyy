@@ -1,5 +1,5 @@
 <div>
-    <button class="btn btn-{{ $type }}" {{ $isToggle() }}>
+    <button {{ $hasId() }} class="btn btn-{{ $type }}" {{ $isToggle() }}>
         {{ $title }}
     </button>
 </div>

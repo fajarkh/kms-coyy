@@ -13,29 +13,28 @@ class Button extends Component
      */
     public $type;
     public $title;
+    public $id;
     public $openModal;
 
-    public function __construct($type, $title, $openModal = null)
+    public function __construct($type, $title, $id = null, $openModal = null)
     {
         $this->type = $type;
         $this->title = $title;
+        $this->id = $id;
         $this->title = $title;
         $this->openModal = $openModal;
     }
 
     public function isToggle(): String
     {
-        if ($this->openModal) {
-            return 'data-toggle=modal data-target=#' . $this->openModal;
-        } else {
-            return '';
-        }
+        return $this->openModal ? 'data-toggle=modal data-target=#' . $this->openModal : '';
     }
-    /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\Contracts\View\View|\Closure|string
-     */
+
+    public function hasId(): String
+    {
+        return $this->id ? 'id=' . $this->id : '';
+    }
+
     public function render()
     {
         return view('components.button');

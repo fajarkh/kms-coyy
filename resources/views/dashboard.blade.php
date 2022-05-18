@@ -16,7 +16,7 @@
                         </div>
                     </x-modal>
 
-                    <x-button type="success" title="Modal" openModal="ayam" />
+                    <x-button id="tombol" type="success" title="Modal" openModal="ayam" />
                 </div>
             </div>
             <div class="row">
@@ -35,5 +35,9 @@
 
 @push('req-scripts')
     {{-- <script src="{{ asset('lte/plugins/dropzone/min/dropzone.min.js') }}"></script> --}}
-    <script></script>
+    <script>
+        $(() => {
+            $('#tombol').click();
+        });
+    </script>
 @endpush
