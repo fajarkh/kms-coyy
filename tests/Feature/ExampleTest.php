@@ -15,7 +15,7 @@ class ExampleTest extends TestCase
     public function test_example()
     {
         $this->visit('/')
-            ->see('hehe')
+            ->see('Laravel')
             ->dontSee('Rails');
     }
 }

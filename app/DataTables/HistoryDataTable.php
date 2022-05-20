@@ -9,12 +9,6 @@ use Yajra\DataTables\Services\DataTable;
 
 class HistoryDataTable extends DataTable
 {
-    /**
-     * Build DataTable class.
-     *
-     * @param mixed $query Results from query() method.
-     * @return \Yajra\DataTables\DataTableAbstract
-     */
     public function dataTable($query)
     {
         return datatables()
@@ -29,12 +23,6 @@ class HistoryDataTable extends DataTable
             });
     }
 
-    /**
-     * Get query source of dataTable.
-     *
-     * @param \App\Models\History $model
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
     public function query()
     {
         $item = History::select();
