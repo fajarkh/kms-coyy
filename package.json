@@ -25,6 +25,7 @@
         "datatables.net-bs4": "^1.11.5",
         "datatables.net-buttons-bs4": "^2.2.2",
         "g": "^2.0.1",
+        "markerjs2": "^2.21.4",
         "npm": "^8.7.0"
     }
 }
