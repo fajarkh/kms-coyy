@@ -44,9 +44,9 @@ class HistoryDataTable extends DataTable
             ->orderBy(1)
             ->buttons(
                 Button::make('create')
-                ->text('Buat Baru')
-                ->addClass('btn btn-success')
-                ->action("window.location = '" . route('history.create') . "';"),
+                    ->text('Buat Baru')
+                    ->addClass('btn btn-success')
+                    ->action("window.location = '" . route('history.create') . "';"),
             );
         return $builder;
     }
@@ -60,8 +60,9 @@ class HistoryDataTable extends DataTable
     {
         return [
             Column::make('DT_RowIndex')
-            ->title('No')
-            ->orderable(false),
+                ->title('No')
+                ->orderable(false)
+                ->searchable(false),
             Column::make('judul'),
             Column::make('konten'),
             Column::computed('action')
