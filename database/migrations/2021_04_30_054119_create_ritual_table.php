@@ -17,7 +17,8 @@ class CreateRitualTable extends Migration
             $table->id();
             $table->bigInteger('budaya_id')->nullable()->unsigned();
             $table->foreign('budaya_id')->references('id')->on('budaya')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('jenis_ritual')->nullable();
+            $table->string('nama')->nullable();
+            $table->string('jenis')->nullable();
             $table->text('deskripsi')->nullable();
             $table->timestamps();
         });

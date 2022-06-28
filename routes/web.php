@@ -17,6 +17,7 @@ Route::get('/dashboard', 'HomeController@index');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('history', 'HistoryController');
+    Route::resource('ritual', 'RitualController');
 });
 
 Auth::routes();
