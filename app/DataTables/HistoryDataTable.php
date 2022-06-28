@@ -23,17 +23,11 @@ class HistoryDataTable extends DataTable
             });
     }
 
-    public function query()
+    public function query(History $model)
     {
-        $item = History::select();
-        return $this->applyScopes($item);
+      return $model->newQuery();
     }
-
-    /**
-     * Optional method if you want to use html builder.
-     *
-     * @return \Yajra\DataTables\Html\Builder
-     */
+      
     public function html()
     {
         $builder = $this->builder()
@@ -51,11 +45,6 @@ class HistoryDataTable extends DataTable
         return $builder;
     }
 
-    /**
-     * Get columns.
-     *
-     * @return array
-     */
     protected function getColumns()
     {
         return [
@@ -74,11 +63,6 @@ class HistoryDataTable extends DataTable
         ];
     }
 
-    /**
-     * Get filename for export.
-     *
-     * @return string
-     */
     protected function filename()
     {
         return 'History_' . date('YmdHis');
