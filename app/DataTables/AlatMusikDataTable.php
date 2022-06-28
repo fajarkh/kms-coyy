@@ -2,15 +2,14 @@
 
 namespace App\DataTables;
 
-use App\Models\History;
+use App\Models\AlatMusik;
 use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Services\DataTable;
 
-class HistoryDataTable extends DataTable
+class AlatMusikDataTable extends DataTable
 {
-    private $route = 'history';
-
+    private $route = 'alatmusik';
     public function dataTable($query)
     {
         return datatables()
@@ -25,7 +24,7 @@ class HistoryDataTable extends DataTable
             });
     }
 
-    public function query(History $model)
+    public function query(AlatMusik $model)
     {
         return $model->newQuery();
     }
@@ -33,7 +32,7 @@ class HistoryDataTable extends DataTable
     public function html()
     {
         $builder = $this->builder()
-            ->setTableId('tabelHistory')
+            ->setTableId('tabelAlatMusik')
             ->columns($this->getColumns())
             ->minifiedAjax()
             ->dom('Bfrtip')
@@ -54,8 +53,9 @@ class HistoryDataTable extends DataTable
                 ->title('No')
                 ->orderable(false)
                 ->searchable(false),
-            Column::make('judul'),
-            Column::make('konten'),
+            Column::make('nama'),
+            Column::make('deskripsi'),
+            Column::make('jenis'),
             Column::computed('action')
                 ->title('Aksi')
                 ->exportable(false)
@@ -67,6 +67,6 @@ class HistoryDataTable extends DataTable
 
     protected function filename()
     {
-        return 'History_' . date('YmdHis');
+        return 'AlatMusik_' . date('YmdHis');
     }
 }

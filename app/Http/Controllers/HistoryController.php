@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\View;
 use App\DataTables\HistoryDataTable;
 use App\Http\Requests\HistoryRequest;
 use App\Models\History;
@@ -10,6 +11,16 @@ use App\Traits\UploadFileTrait;
 class HistoryController extends Controller
 {
     use UploadFileTrait;
+
+    public function __construct()
+    {
+        View::share(
+            [
+                'title' => 'History',
+            ]
+        );
+    }
+
     public function index(HistoryDataTable $dataTable)
     {
         return $dataTable->render('history.index');

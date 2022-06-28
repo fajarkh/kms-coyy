@@ -42,6 +42,13 @@
                     {{-- <span class="right badge badge-danger">New</span> --}}
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{ route('alatmusik.index') }}" class="nav-link">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>Alat Musik</p>
+                    {{-- <span class="right badge badge-danger">New</span> --}}
+                </a>
+            </li>
         </ul>
     </nav>
     <!-- /.sidebar-menu -->

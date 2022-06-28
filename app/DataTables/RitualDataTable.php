@@ -9,6 +9,7 @@ use Yajra\DataTables\Services\DataTable;
 
 class RitualDataTable extends DataTable
 {
+    private $route = 'ritual';
     public function dataTable($query)
     {
         return datatables()
@@ -17,17 +18,17 @@ class RitualDataTable extends DataTable
             ->addColumn('action', function ($query) {
                 return view('datatable._action', [
                     'model' => $query,
-                    'route_edit' => 'ritual.edit',
-                    'route_destroy' => 'ritual.destroy'
+                    'route_edit' => $this->route . '.edit',
+                    'route_destroy' => $this->route . '.destroy'
                 ]);
             });
     }
 
     public function query(Ritual $model)
     {
-      return $model->newQuery();
+        return $model->newQuery();
     }
-      
+
     public function html()
     {
         $builder = $this->builder()
@@ -40,7 +41,7 @@ class RitualDataTable extends DataTable
                 Button::make('create')
                     ->text('Buat Baru')
                     ->addClass('btn btn-success')
-                    ->action("window.location = '" . route('history.create') . "';"),
+                    ->action("window.location = '" . route($this->route . '.create') . "';"),
             );
         return $builder;
     }

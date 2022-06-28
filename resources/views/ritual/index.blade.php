@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
 @endpush
 
-@section('content-header', 'Data Ritual')
+@section('content-header', 'Data ' . $title)
 @section('content')
     <div class="row">
         <div class="col-md-12">

@@ -17,7 +17,7 @@ class CreateAlatMusikTable extends Migration
             $table->id();
             $table->bigInteger('budaya_id')->nullable()->unsigned();
             $table->foreign('budaya_id')->references('id')->on('budaya')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('alat_musik')->nullable();
+            $table->string('nama')->nullable();
             $table->text('deskripsi')->nullable();
             $table->timestamps();
         });

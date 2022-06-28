@@ -2,12 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\View;
 use App\DataTables\RitualDataTable;
 use App\Http\Requests\RitualRequest;
 use App\Models\Ritual;
 
 class RitualController extends Controller
 {
+    public function __construct()
+    {
+        View::share(
+            [
+                'title' => 'Ritual',
+            ]
+        );
+    }
+
     public function index(RitualDataTable $dataTable)
     {
         return $dataTable->render('ritual.index');
