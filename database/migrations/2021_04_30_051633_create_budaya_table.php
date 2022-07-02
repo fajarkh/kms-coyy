@@ -17,7 +17,7 @@ class CreateBudayaTable extends Migration
             $table->id();
             $table->bigInteger('user_id')->nullable()->unsigned();
             $table->foreign('user_id')->references('id')->on('user')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('macam_budaya')->nullable();
+            $table->string('nama')->nullable();
             $table->timestamps();
         });
     }

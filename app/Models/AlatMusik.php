@@ -12,4 +12,9 @@ class AlatMusik extends Model
         'deskripsi',
         'id_budaya',
     ];
+
+    public function budaya()
+    {
+        return $this->belongsTo('App\Budaya');
+    }
 }
