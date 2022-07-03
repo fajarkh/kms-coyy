@@ -26,4 +26,9 @@ class Budaya extends Model
     {
         return $this->hasMany('App\RumahAdat');
     }
+
+    public function upacaraAdat()
+    {
+        return $this->hasMany('App\UpacaraAdat');
+    }
 }

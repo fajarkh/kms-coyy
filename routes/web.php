@@ -20,6 +20,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('ritual', 'RitualController');
     Route::resource('alatmusik', 'AlatMusikController');
     Route::resource('rumahadat', 'RumahAdatController');
+    Route::resource('upacaraadat', 'UpacaraAdatController');
 });
 
 Auth::routes();

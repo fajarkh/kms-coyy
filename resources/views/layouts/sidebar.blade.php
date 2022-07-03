@@ -60,6 +60,14 @@
                     {{-- <span class="right badge badge-danger">New</span> --}}
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{ route('upacaraadat.index') }}"
+                    class="nav-link {{ request()->is('*upacaraadat*') ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>Upacara Adat</p>
+                    {{-- <span class="right badge badge-danger">New</span> --}}
+                </a>
+            </li>
         </ul>
     </nav>
     <!-- /.sidebar-menu -->
