@@ -31,4 +31,9 @@ class Budaya extends Model
     {
         return $this->hasMany('App\UpacaraAdat');
     }
+
+    public function pakaian()
+    {
+        return $this->hasMany('App\pakaian');
+    }
 }
