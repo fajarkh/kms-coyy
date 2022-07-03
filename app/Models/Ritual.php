@@ -20,4 +20,12 @@ class Ritual extends Model
         'jenis',
         'id_budaya',
     ];
+
+    public static function dataRitual()
+    {
+        return [
+            'kematian' => 'Kematian',
+            'kelahiran' => 'Kelahiran',
+        ];
+    }
 }

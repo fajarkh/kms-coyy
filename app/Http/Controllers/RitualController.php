@@ -12,9 +12,11 @@ class RitualController extends Controller
     public function __construct()
     {
         $this->view = 'ritual';
+        $this->route = 'ritual';
         View::share(
             [
                 'title' => 'Ritual',
+                'route' => $this->route
             ]
         );
     }
@@ -72,9 +74,9 @@ class RitualController extends Controller
     {
         $item = Ritual::findOrFail($id);
         if ($item->delete()) {
-            return redirect()->route($this->view . 'index')->with(['success' => 'Data Berhasil Dihapus!']);
+            return redirect()->route($this->view . '.index')->with(['success' => 'Data Berhasil Dihapus!']);
         } else {
-            return redirect()->route($this->view . 'index')->with(['error' => 'Data Gagal Dihapus!']);
+            return redirect()->route($this->view . '.index')->with(['error' => 'Data Gagal Dihapus!']);
         }
     }
 }

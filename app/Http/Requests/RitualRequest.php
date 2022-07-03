@@ -27,7 +27,6 @@ class RitualRequest extends FormRequest
             'nama' => 'required',
             'deskripsi' => 'required',
             'jenis' => 'required',
-            'id_budaya' => 'required'
         ];
         return $rules;
     }
