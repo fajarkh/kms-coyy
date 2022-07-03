@@ -13,9 +13,11 @@ class AlatMusikController extends Controller
     public function __construct()
     {
         $this->view = 'alat_musik';
+        $this->route = 'alatmusik';
         View::share(
             [
                 'title' => 'Alat Musik',
+                'route' => $this->route
             ]
         );
     }
@@ -45,9 +47,9 @@ class AlatMusikController extends Controller
         ]);
 
         if ($item) {
-            return redirect()->route('alatmusik.index')->with(['success' => 'Data Berhasil Disimpan!']);
+            return redirect()->route($this->route . '.index')->with(['success' => 'Data Berhasil Disimpan!']);
         } else {
-            return redirect()->route('alatmusik.index')->with(['error' => 'Data Gagal Disimpan!']);
+            return redirect()->route($this->route . '.index')->with(['error' => 'Data Gagal Disimpan!']);
         }
     }
 
@@ -61,9 +63,9 @@ class AlatMusikController extends Controller
         ];
 
         if ($item->update($dataUpdate)) {
-            return redirect()->route('alatmusik.index')->with(['success' => 'Data Berhasil Diupdate!']);
+            return redirect()->route($this->route . '.index')->with(['success' => 'Data Berhasil Diupdate!']);
         } else {
-            return redirect()->route('alatmusik.index')->with(['error' => 'Data Gagal Diupdate!']);
+            return redirect()->route($this->route . '.index')->with(['error' => 'Data Gagal Diupdate!']);
         }
     }
 
@@ -71,9 +73,9 @@ class AlatMusikController extends Controller
     {
         $item = AlatMusik::findOrFail($id);
         if ($item->delete()) {
-            return redirect()->route('alatmusik.index')->with(['success' => 'Data Berhasil Dihapus!']);
+            return redirect()->route($this->route . '.index')->with(['success' => 'Data Berhasil Dihapus!']);
         } else {
-            return redirect()->route('alatmusik.index')->with(['error' => 'Data Gagal Dihapus!']);
+            return redirect()->route($this->route . '.index')->with(['error' => 'Data Gagal Dihapus!']);
         }
     }
 }

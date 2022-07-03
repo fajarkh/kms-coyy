@@ -16,7 +16,6 @@ class AlatMusikRequest extends FormRequest
         $rules = [
             'nama' => 'required',
             'deskripsi' => 'required',
-            'id_budaya' => 'required'
         ];
         return $rules;
     }
