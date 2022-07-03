@@ -28,7 +28,8 @@
                 </ul>
             </li> --}}
             <li class="nav-item">
-                <a href="{{ route('history.index') }}" class="nav-link">
+                <a href="{{ route('history.index') }}"
+                    class="nav-link {{ request()->is('*history*') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-th"></i>
                     <p>History
                         {{-- <span class="right badge badge-danger">New</span> --}}
@@ -36,16 +37,26 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('ritual.index') }}" class="nav-link">
+                <a href="{{ route('ritual.index') }}"
+                    class="nav-link {{ request()->is('*ritual*') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-th"></i>
                     <p>Ritual</p>
                     {{-- <span class="right badge badge-danger">New</span> --}}
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('alatmusik.index') }}" class="nav-link">
+                <a href="{{ route('alatmusik.index') }}"
+                    class="nav-link {{ request()->is('*alatmusik*') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-th"></i>
                     <p>Alat Musik</p>
+                    {{-- <span class="right badge badge-danger">New</span> --}}
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('rumahadat.index') }}"
+                    class="nav-link {{ request()->is('*rumahadat*') ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>Rumah Adat</p>
                     {{-- <span class="right badge badge-danger">New</span> --}}
                 </a>
             </li>

@@ -19,6 +19,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('history', 'HistoryController');
     Route::resource('ritual', 'RitualController');
     Route::resource('alatmusik', 'AlatMusikController');
+    Route::resource('rumahadat', 'RumahAdatController');
 });
 
 Auth::routes();
