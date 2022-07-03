@@ -22,6 +22,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('rumahadat', 'RumahAdatController');
     Route::resource('upacaraadat', 'UpacaraAdatController');
     Route::resource('pakaian', 'PakaianController');
+    Route::resource('senjata', 'SenjataController');
 });
 
 Auth::routes();

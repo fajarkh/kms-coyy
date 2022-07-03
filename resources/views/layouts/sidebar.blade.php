@@ -76,6 +76,14 @@
                     {{-- <span class="right badge badge-danger">New</span> --}}
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{ route('senjata.index') }}"
+                    class="nav-link {{ request()->is('*senjata*') ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>Senjata</p>
+                    {{-- <span class="right badge badge-danger">New</span> --}}
+                </a>
+            </li>
         </ul>
     </nav>
     <!-- /.sidebar-menu -->
