@@ -11,6 +11,7 @@ class RitualController extends Controller
 {
     public function __construct()
     {
+        $this->view = 'ritual';
         View::share(
             [
                 'title' => 'Ritual',
@@ -20,18 +21,18 @@ class RitualController extends Controller
 
     public function index(RitualDataTable $dataTable)
     {
-        return $dataTable->render('ritual.index');
+        return $dataTable->render($this->view . '.index');
     }
 
     public function create()
     {
-        return view('ritual.create');
+        return view($this->view . '.create');
     }
 
     public function edit($id)
     {
         $item = Ritual::find($id);
-        return view('ritual.edit', compact('item'));
+        return view($this->view . '.edit', compact('item'));
     }
 
     public function store(RitualRequest $request)
@@ -44,9 +45,9 @@ class RitualController extends Controller
         ]);
 
         if ($item) {
-            return redirect()->route('ritual.index')->with(['success' => 'Data Berhasil Disimpan!']);
+            return redirect()->route($this->view . '.index')->with(['success' => 'Data Berhasil Disimpan!']);
         } else {
-            return redirect()->route('ritual.index')->with(['error' => 'Data Gagal Disimpan!']);
+            return redirect()->route($this->view . '.index')->with(['error' => 'Data Gagal Disimpan!']);
         }
     }
 
@@ -61,9 +62,9 @@ class RitualController extends Controller
         ];
 
         if ($item->update($dataUpdate)) {
-            return redirect()->route('ritual.index')->with(['success' => 'Data Berhasil Diupdate!']);
+            return redirect()->route($this->view . 'index')->with(['success' => 'Data Berhasil Diupdate!']);
         } else {
-            return redirect()->route('ritual.index')->with(['error' => 'Data Gagal Diupdate!']);
+            return redirect()->route($this->view . 'index')->with(['error' => 'Data Gagal Diupdate!']);
         }
     }
 
@@ -71,9 +72,9 @@ class RitualController extends Controller
     {
         $item = Ritual::findOrFail($id);
         if ($item->delete()) {
-            return redirect()->route('ritual.index')->with(['success' => 'Data Berhasil Dihapus!']);
+            return redirect()->route($this->view . 'index')->with(['success' => 'Data Berhasil Dihapus!']);
         } else {
-            return redirect()->route('ritual.index')->with(['error' => 'Data Gagal Dihapus!']);
+            return redirect()->route($this->view . 'index')->with(['error' => 'Data Gagal Dihapus!']);
         }
     }
 }

@@ -12,27 +12,28 @@ class AlatMusikController extends Controller
 
     public function __construct()
     {
+        $this->view = 'alat_musik';
         View::share(
             [
                 'title' => 'Alat Musik',
             ]
         );
     }
-    
+
     public function index(AlatMusikDataTable $dataTable)
     {
-        return $dataTable->render('alat_musik.index');
+        return $dataTable->render($this->view . '.index');
     }
 
     public function create()
     {
-        return view('alat_musik.create');
+        return view($this->view . '.create');
     }
 
     public function edit($id)
     {
         $item = AlatMusik::find($id);
-        return view('alat_musik.edit', compact('item'));
+        return view($this->view . '.edit', compact('item'));
     }
 
     public function store(AlatMusikRequest $request)
