@@ -14,27 +14,30 @@ class HistoryController extends Controller
 
     public function __construct()
     {
+        $this->view = 'history';
+        $this->route = 'history';
         View::share(
             [
                 'title' => 'History',
+                'route' => $this->route
             ]
         );
     }
 
     public function index(HistoryDataTable $dataTable)
     {
-        return $dataTable->render('history.index');
+        return $dataTable->render($this->view . '.index');
     }
 
     public function create()
     {
-        return view('history.create');
+        return view($this->view . '.create');
     }
 
     public function edit($id)
     {
         $item = History::find($id);
-        return view('history.edit', compact('item'));
+        return view($this->view . '.edit', compact('item'));
     }
 
     public function store(HistoryRequest $request)
@@ -46,9 +49,9 @@ class HistoryController extends Controller
         ]);
 
         if ($item) {
-            return redirect()->route('history.index')->with(['success' => 'Data Berhasil Disimpan!']);
+            return redirect()->route($this->view . '.index')->with(['success' => 'Data Berhasil Disimpan!']);
         } else {
-            return redirect()->route('history.index')->with(['error' => 'Data Gagal Disimpan!']);
+            return redirect()->route($this->view . '.index')->with(['error' => 'Data Gagal Disimpan!']);
         }
     }
 
@@ -64,9 +67,9 @@ class HistoryController extends Controller
         }
 
         if ($item->update($dataUpdate)) {
-            return redirect()->route('history.index')->with(['success' => 'Data Berhasil Diupdate!']);
+            return redirect()->route($this->view . '.index')->with(['success' => 'Data Berhasil Diupdate!']);
         } else {
-            return redirect()->route('history.index')->with(['error' => 'Data Gagal Diupdate!']);
+            return redirect()->route($this->view . '.index')->with(['error' => 'Data Gagal Diupdate!']);
         }
     }
 
@@ -76,9 +79,9 @@ class HistoryController extends Controller
         $this->deleteFile('history', $item->gambar);
 
         if ($item->delete()) {
-            return redirect()->route('history.index')->with(['success' => 'Data Berhasil Dihapus!']);
+            return redirect()->route($this->view . '.index')->with(['success' => 'Data Berhasil Dihapus!']);
         } else {
-            return redirect()->route('history.index')->with(['error' => 'Data Gagal Dihapus!']);
+            return redirect()->route($this->view . '.index')->with(['error' => 'Data Gagal Dihapus!']);
         }
     }
 }
