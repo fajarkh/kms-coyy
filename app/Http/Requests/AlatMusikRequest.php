@@ -17,6 +17,9 @@ class AlatMusikRequest extends FormRequest
             'nama' => 'required',
             'deskripsi' => 'required',
         ];
+        if ($this->isMethod('post')) {
+            $rules[] = ['gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'];
+        }
         return $rules;
     }
 }

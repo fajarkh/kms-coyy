@@ -9,6 +9,7 @@ class AlatMusik extends Model
     protected $table = 'alat_musik';
     protected $fillable = [
         'nama',
+        'gambar',
         'deskripsi',
         'id_budaya',
     ];

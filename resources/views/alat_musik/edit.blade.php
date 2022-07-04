@@ -17,6 +17,13 @@
                         @enderror
                     </div>
                     <div class="form-group">
+                        <label class="font-weight-bold">Gambar</label>
+                        <input type="file" class="form-control @error('gambar') is-invalid @enderror" name="gambar">
+                        @error('gambar')
+                            <div class="alert alert-danger mt-2">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
                         <label class="font-weight-bold">Deskripsi</label>
                         <textarea class="form-control @error('deskripsi') is-invalid @enderror" name="deskripsi" rows="5"
                             placeholder="Masukkan Deskripsi">{{ old('deskripsi', $item->deskripsi) }}</textarea>

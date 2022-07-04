@@ -5,13 +5,20 @@
     <div class="col-md-12">
         <div class="card border-0 shadow rounded">
             <div class="card-body">
-                <form action="{{ route($route . '.store') }}" method="POST">
+                <form action="{{ route($route . '.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label class="font-weight-bold">Nama</label>
                         <input type="text" class="form-control @error('judul') is-invalid @enderror" name="nama"
                             value="{{ old('nama') }}" placeholder="Masukkan Nama">
                         @error('nama')
+                            <div class="alert alert-danger mt-2">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-bold">Gambar</label>
+                        <input type="file" class="form-control @error('gambar') is-invalid @enderror" name="gambar">
+                        @error('gambar')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                         @enderror
                     </div>
