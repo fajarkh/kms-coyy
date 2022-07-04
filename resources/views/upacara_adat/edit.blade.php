@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('content-header', 'Edit History - ' . $item->judul)
+@section('content-header', 'Edit ' . $title . ' - ' . $item->nama)
 
 @section('content')
     <div class="col-md-12">
