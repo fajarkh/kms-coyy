@@ -5,30 +5,30 @@
     <div class="col-md-12">
         <div class="card border-0 shadow rounded">
             <div class="card-body">
-                <form action="{{ route('history.update', $item->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route($route . '.update', $item->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="form-group">
-                        <label class="font-weight-bold">Gambar</label>
-                        <input type="file" class="form-control" name="gambar">
-                    </div>
-
-                    <div class="form-group">
-                        <label class="font-weight-bold">Judul</label>
-                        <input type="text" class="form-control @error('judul') is-invalid @enderror" name="judul"
-                            value="{{ old('judul', $item->judul) }}" placeholder="Masukkan Judul">
-
-                        @error('judul')
+                        <label class="font-weight-bold">Nama</label>
+                        <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama"
+                            value="{{ old('nama', $item->nama) }}" placeholder="Masukkan Nama">
+                        @error('nama')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                         @enderror
                     </div>
-
                     <div class="form-group">
-                        <label class="font-weight-bold">Konten</label>
-                        <textarea class="form-control @error('konten') is-invalid @enderror" name="konten" rows="5"
-                            placeholder="Masukkan Konten Blog">{{ old('konten', $item->konten) }}</textarea>
+                        <label class="font-weight-bold">Gambar</label>
+                        <input type="file" class="form-control @error('gambar') is-invalid @enderror" name="gambar">
+                        @error('gambar')
+                            <div class="alert alert-danger mt-2">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-bold">Deskripsi</label>
+                        <textarea class="form-control @error('deskripsi') is-invalid @enderror" name="deskripsi" rows="5"
+                            placeholder="Masukkan Deskripsi">{{ old('deskripsi', $item->deskripsi) }}</textarea>
 
-                        @error('konten')
+                        @error('deskripsi')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                         @enderror
                     </div>
@@ -45,6 +45,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
     <script>
-        CKEDITOR.replace('konten');
+        CKEDITOR.replace('deskripsi');
     </script>
 @endpush

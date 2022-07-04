@@ -2,22 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\View;
 use App\DataTables\UpacaraAdatDataTable;
 use App\Http\Requests\UpacaraAdatRequest;
 use App\Models\UpacaraAdat;
+use App\Traits\UploadFileTrait;
 
 class UpacaraAdatController extends Controller
 {
-
+    use UploadFileTrait;
     public function __construct()
     {
         $this->view = 'upacara_adat';
-        View::share(
-            [
-                'title' => 'Upacara Adat',
-            ]
-        );
+        $this->route = 'upacaraadat';
+        $this->title = 'Upacata Adat';
+        $this->shareView();
     }
 
     public function index(UpacaraAdatDataTable $dataTable)
@@ -40,15 +38,11 @@ class UpacaraAdatController extends Controller
     {
         $item = UpacaraAdat::create([
             'nama'     => $request->nama,
+            'gambar'     => $this->upload('upacara_adat', $request->file('gambar')),
             'deskripsi'   => $request->deskripsi,
             'budaya_id'   => $request->budaya_id
         ]);
-
-        if ($item) {
-            return redirect()->route('alatmusik.index')->with(['success' => 'Data Berhasil Disimpan!']);
-        } else {
-            return redirect()->route('alatmusik.index')->with(['error' => 'Data Gagal Disimpan!']);
-        }
+        return $this->redirectWith($item->wasRecentlyCreated ? 'insert' : 'error');
     }
 
     public function update(UpacaraAdatRequest $request, $id)
@@ -59,21 +53,16 @@ class UpacaraAdatController extends Controller
             'deskripsi'   => $request->deskripsi,
             'budaya_id'   => $request->budaya_id
         ];
-
-        if ($item->update($dataUpdate)) {
-            return redirect()->route('alatmusik.index')->with(['success' => 'Data Berhasil Diupdate!']);
-        } else {
-            return redirect()->route('alatmusik.index')->with(['error' => 'Data Gagal Diupdate!']);
+        if ($request->file('gambar') != "") {
+            $dataUpdate['gambar'] = $this->upload('upacara_adat', $request->file('gambar'), $item->gambar);
         }
+        return $this->redirectWith($item->update($dataUpdate)  ? 'update' : 'error');
     }
 
     public function destroy($id)
     {
         $item = UpacaraAdat::findOrFail($id);
-        if ($item->delete()) {
-            return redirect()->route('alatmusik.index')->with(['success' => 'Data Berhasil Dihapus!']);
-        } else {
-            return redirect()->route('alatmusik.index')->with(['error' => 'Data Gagal Dihapus!']);
-        }
+        $this->deleteFile('upacara_adat', $item->gambar);
+        return $this->redirectWith($item->delete() ? 'delete' : 'error');
     }
 }
