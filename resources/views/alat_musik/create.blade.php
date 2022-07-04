@@ -8,9 +8,9 @@
                 <form action="{{ route($route . '.store') }}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <label class="font-weight-bold">nama</label>
+                        <label class="font-weight-bold">Nama</label>
                         <input type="text" class="form-control @error('judul') is-invalid @enderror" name="nama"
-                            value="{{ old('nama') }}" placeholder="Masukkan Judul history">
+                            value="{{ old('nama') }}" placeholder="Masukkan Nama">
                         @error('nama')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                         @enderror

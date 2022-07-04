@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\View;
 use App\DataTables\AlatMusikDataTable;
 use App\Http\Requests\AlatMusikRequest;
 use App\Models\AlatMusik;
@@ -14,12 +13,8 @@ class AlatMusikController extends Controller
     {
         $this->view = 'alat_musik';
         $this->route = 'alatmusik';
-        View::share(
-            [
-                'title' => 'Alat Musik',
-                'route' => $this->route
-            ]
-        );
+        $this->title = 'Alat Musik';
+        $this->registerView();
     }
 
     public function index(AlatMusikDataTable $dataTable)
@@ -45,12 +40,7 @@ class AlatMusikController extends Controller
             'deskripsi'   => $request->deskripsi,
             'budaya_id'   => $request->budaya_id
         ]);
-
-        if ($item) {
-            return redirect()->route($this->route . '.index')->with(['success' => 'Data Berhasil Disimpan!']);
-        } else {
-            return redirect()->route($this->route . '.index')->with(['error' => 'Data Gagal Disimpan!']);
-        }
+        return $this->redirectWith($item->wasRecentlyCreated ? 'insert' : 'error');
     }
 
     public function update(AlatMusikRequest $request, $id)
@@ -61,21 +51,12 @@ class AlatMusikController extends Controller
             'deskripsi'   => $request->deskripsi,
             'budaya_id'   => $request->budaya_id
         ];
-
-        if ($item->update($dataUpdate)) {
-            return redirect()->route($this->route . '.index')->with(['success' => 'Data Berhasil Diupdate!']);
-        } else {
-            return redirect()->route($this->route . '.index')->with(['error' => 'Data Gagal Diupdate!']);
-        }
+        return $this->redirectWith($item->update($dataUpdate)  ? 'update' : 'error');
     }
 
     public function destroy($id)
     {
         $item = AlatMusik::findOrFail($id);
-        if ($item->delete()) {
-            return redirect()->route($this->route . '.index')->with(['success' => 'Data Berhasil Dihapus!']);
-        } else {
-            return redirect()->route($this->route . '.index')->with(['error' => 'Data Gagal Dihapus!']);
-        }
+        return $this->redirectWith($item->delete() ? 'delete' : 'error');
     }
 }
