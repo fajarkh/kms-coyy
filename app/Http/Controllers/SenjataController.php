@@ -6,18 +6,17 @@ use Illuminate\Support\Facades\View;
 use App\DataTables\SenjataDataTable;
 use App\Http\Requests\SenjataRequest;
 use App\Models\Senjata;
+use App\Traits\UploadFileTrait;
 
 class SenjataController extends Controller
 {
-
+use UploadFileTrait;
     public function __construct()
     {
         $this->view = 'senjata';
-        View::share(
-            [
-                'title' => 'Senjata',
-            ]
-        );
+        $this->route = 'senjata';
+        $this->title = 'Senjata';
+        $this->shareView();
     }
 
     public function index(SenjataDataTable $dataTable)
@@ -40,15 +39,11 @@ class SenjataController extends Controller
     {
         $item = Senjata::create([
             'nama'     => $request->nama,
+            'gambar'     => $this->upload('senjata', $request->file('gambar')),
             'deskripsi'   => $request->deskripsi,
             'budaya_id'   => $request->budaya_id
         ]);
-
-        if ($item) {
-            return redirect()->route('alatmusik.index')->with(['success' => 'Data Berhasil Disimpan!']);
-        } else {
-            return redirect()->route('alatmusik.index')->with(['error' => 'Data Gagal Disimpan!']);
-        }
+        return $this->redirectWith($item->wasRecentlyCreated ? 'insert' : 'error');
     }
 
     public function update(SenjataRequest $request, $id)
@@ -59,21 +54,16 @@ class SenjataController extends Controller
             'deskripsi'   => $request->deskripsi,
             'budaya_id'   => $request->budaya_id
         ];
-
-        if ($item->update($dataUpdate)) {
-            return redirect()->route('alatmusik.index')->with(['success' => 'Data Berhasil Diupdate!']);
-        } else {
-            return redirect()->route('alatmusik.index')->with(['error' => 'Data Gagal Diupdate!']);
+        if ($request->file('gambar') != "") {
+            $dataUpdate['gambar'] = $this->upload('senjata', $request->file('gambar'), $item->gambar);
         }
+        return $this->redirectWith($item->update($dataUpdate)  ? 'update' : 'error');
     }
 
     public function destroy($id)
     {
         $item = Senjata::findOrFail($id);
-        if ($item->delete()) {
-            return redirect()->route('alatmusik.index')->with(['success' => 'Data Berhasil Dihapus!']);
-        } else {
-            return redirect()->route('alatmusik.index')->with(['error' => 'Data Gagal Dihapus!']);
-        }
+        $this->deleteFile('senjata', $item->gambar);
+        return $this->redirectWith($item->delete() ? 'delete' : 'error');
     }
 }
