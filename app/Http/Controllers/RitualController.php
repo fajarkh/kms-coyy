@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\View;
 use App\DataTables\RitualDataTable;
 use App\Http\Requests\RitualRequest;
 use App\Models\Ritual;
@@ -13,12 +12,8 @@ class RitualController extends Controller
     {
         $this->view = 'ritual';
         $this->route = 'ritual';
-        View::share(
-            [
-                'title' => 'Ritual',
-                'route' => $this->route
-            ]
-        );
+        $this->title = 'Ritual';
+        $this->shareView();
     }
 
     public function index(RitualDataTable $dataTable)
@@ -45,12 +40,7 @@ class RitualController extends Controller
             'jenis'   => $request->jenis,
             'budaya_id'   => $request->budaya_id
         ]);
-
-        if ($item) {
-            return redirect()->route($this->route . '.index')->with(['success' => 'Data Berhasil Disimpan!']);
-        } else {
-            return redirect()->route($this->route . '.index')->with(['error' => 'Data Gagal Disimpan!']);
-        }
+        return $this->redirectWith($item->wasRecentlyCreated ? 'insert' : 'error');
     }
 
     public function update(RitualRequest $request, $id)
@@ -62,21 +52,12 @@ class RitualController extends Controller
             'jenis'   => $request->jenis,
             'budaya_id'   => $request->budaya_id
         ];
-
-        if ($item->update($dataUpdate)) {
-            return redirect()->route($this->route . 'index')->with(['success' => 'Data Berhasil Diupdate!']);
-        } else {
-            return redirect()->route($this->route . 'index')->with(['error' => 'Data Gagal Diupdate!']);
-        }
+        return $this->redirectWith($item->update($dataUpdate)  ? 'update' : 'error');
     }
 
     public function destroy($id)
     {
         $item = Ritual::findOrFail($id);
-        if ($item->delete()) {
-            return redirect()->route($this->route . '.index')->with(['success' => 'Data Berhasil Dihapus!']);
-        } else {
-            return redirect()->route($this->route . '.index')->with(['error' => 'Data Gagal Dihapus!']);
-        }
+        return $this->redirectWith($item->delete() ? 'delete' : 'error');
     }
 }

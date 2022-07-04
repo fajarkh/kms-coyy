@@ -14,7 +14,7 @@ class AlatMusikController extends Controller
         $this->view = 'alat_musik';
         $this->route = 'alatmusik';
         $this->title = 'Alat Musik';
-        $this->registerView();
+        $this->shareView();
     }
 
     public function index(AlatMusikDataTable $dataTable)

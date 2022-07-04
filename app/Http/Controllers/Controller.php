@@ -15,7 +15,8 @@ class Controller extends BaseController
     protected $view;
     protected $route;
     protected $title;
-    protected function registerView()
+
+    protected function shareView()
     {
         View::share(
             [
@@ -34,7 +35,7 @@ class Controller extends BaseController
             return redirect()->route($this->route . '.index')->with(['success' => 'Data Berhasil Diubah!']);
         } elseif ($status == 'delete')
             return redirect()->route($this->route . '.index')->with(['success' => 'Data Berhasil Dihapus!']);
-        else {
+        elseif($status == 'error') {
             return redirect()->route($this->route . '.index')->with(['error' => 'Terjadi Kesalahan']);
         }
     }
