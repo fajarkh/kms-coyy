@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUpacaraAdatTable extends Migration
+class CreateAdatPernikahanTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateUpacaraAdatTable extends Migration
      */
     public function up()
     {
-        Schema::create('upacara_adat', function (Blueprint $table) {
+        Schema::create('adat_pernikahan', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('budaya_id')->nullable()->unsigned();
             $table->foreign('budaya_id')->references('id')->on('budaya')->onUpdate('cascade')->onDelete('cascade');
@@ -31,6 +31,6 @@ class CreateUpacaraAdatTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('upacara_adat');
+        Schema::dropIfExists('adat_pernikahan');
     }
 }

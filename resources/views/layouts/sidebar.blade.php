@@ -61,10 +61,18 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('upacaraadat.index') }}"
-                    class="nav-link {{ request()->is('*upacaraadat*') ? 'active' : '' }}">
+                <a href="{{ route('adatlahiran.index') }}"
+                    class="nav-link {{ request()->is('*adatlahiran*') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-th"></i>
-                    <p>Upacara Adat</p>
+                    <p>Adat Lahiran</p>
+                    {{-- <span class="right badge badge-danger">New</span> --}}
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('adatpernikahan.index') }}"
+                    class="nav-link {{ request()->is('*adatpernikahan*') ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>Adat Pernikahan</p>
                     {{-- <span class="right badge badge-danger">New</span> --}}
                 </a>
             </li>

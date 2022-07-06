@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpacaraAdatRequest extends FormRequest
+class AdatPernikahanRequest extends FormRequest
 {
     public function authorize()
     {

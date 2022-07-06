@@ -2,23 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\DataTables\UpacaraAdatDataTable;
-use App\Http\Requests\UpacaraAdatRequest;
-use App\Models\UpacaraAdat;
+use App\DataTables\AdatPernikahanDataTable;
+use App\Http\Requests\AdatPernikahanRequest;
+use App\Models\AdatPernikahan;
 use App\Traits\UploadFileTrait;
 
-class UpacaraAdatController extends Controller
+class AdatPernikahanController extends Controller
 {
     use UploadFileTrait;
     public function __construct()
     {
-        $this->view = 'upacara_adat';
-        $this->route = 'upacaraadat';
-        $this->title = 'Upacata Adat';
+        $this->view = 'adat_pernikahan';
+        $this->route = 'adatpernikahan';
+        $this->title = 'Adat Pernikahan';
         $this->shareView();
     }
 
-    public function index(UpacaraAdatDataTable $dataTable)
+    public function index(AdatPernikahanDataTable $dataTable)
     {
         return $dataTable->render($this->view . '.index');
     }
@@ -30,39 +30,39 @@ class UpacaraAdatController extends Controller
 
     public function edit($id)
     {
-        $item = UpacaraAdat::find($id);
+        $item = AdatPernikahan::find($id);
         return view($this->view . '.edit', compact('item'));
     }
 
-    public function store(UpacaraAdatRequest $request)
+    public function store(AdatPernikahanRequest $request)
     {
-        $item = UpacaraAdat::create([
+        $item = AdatPernikahan::create([
             'nama'     => $request->nama,
-            'gambar'     => $this->upload('upacara_adat', $request->file('gambar')),
+            'gambar'     => $this->upload('adat_pernikahan', $request->file('gambar')),
             'deskripsi'   => $request->deskripsi,
             'budaya_id'   => $request->budaya_id
         ]);
         return $this->redirectWith($item->wasRecentlyCreated ? 'insert' : 'error');
     }
 
-    public function update(UpacaraAdatRequest $request, $id)
+    public function update(AdatPernikahanRequest $request, $id)
     {
-        $item = UpacaraAdat::findOrFail($id);
+        $item = AdatPernikahan::findOrFail($id);
         $dataUpdate = [
             'nama'     => $request->nama,
             'deskripsi'   => $request->deskripsi,
             'budaya_id'   => $request->budaya_id
         ];
         if ($request->file('gambar') != "") {
-            $dataUpdate['gambar'] = $this->upload('upacara_adat', $request->file('gambar'), $item->gambar);
+            $dataUpdate['gambar'] = $this->upload('adat_pernikahan', $request->file('gambar'), $item->gambar);
         }
         return $this->redirectWith($item->update($dataUpdate)  ? 'update' : 'error');
     }
 
     public function destroy($id)
     {
-        $item = UpacaraAdat::findOrFail($id);
-        $this->deleteFile('upacara_adat', $item->gambar);
+        $item = AdatPernikahan::findOrFail($id);
+        $this->deleteFile('adat_pernikahan', $item->gambar);
         return $this->redirectWith($item->delete() ? 'delete' : 'error');
     }
 }

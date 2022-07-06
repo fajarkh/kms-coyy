@@ -2,14 +2,14 @@
 
 namespace App\DataTables;
 
-use App\Models\UpacaraAdat;
+use App\Models\AdatLahiran;
 use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Services\DataTable;
 
-class UpacaraAdatDataTable extends DataTable
+class AdatLahiranDataTable extends DataTable
 {
-    private $route = 'upacaraadat';
+    private $route = 'adatlahiran';
     public function dataTable($query)
     {
         return datatables()
@@ -24,7 +24,7 @@ class UpacaraAdatDataTable extends DataTable
             });
     }
 
-    public function query(UpacaraAdat $model)
+    public function query(AdatLahiran $model)
     {
         return $model->newQuery();
     }
@@ -32,7 +32,7 @@ class UpacaraAdatDataTable extends DataTable
     public function html()
     {
         $builder = $this->builder()
-            ->setTableId('tabelUpacaraAdat')
+            ->setTableId('tabelAdatLahiran')
             ->columns($this->getColumns())
             ->minifiedAjax()
             ->dom('Bfrtip')
@@ -66,6 +66,6 @@ class UpacaraAdatDataTable extends DataTable
 
     protected function filename()
     {
-        return 'UpacaraAdat_' . date('YmdHis');
+        return 'AdatLahiran_' . date('YmdHis');
     }
 }
