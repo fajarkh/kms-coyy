@@ -37,6 +37,15 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a href="{{ route('sejarah.index') }}"
+                    class="nav-link {{ request()->is('*sejarah*') ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>Sejarah
+                        {{-- <span class="right badge badge-danger">New</span> --}}
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a href="{{ route('ritual.index') }}"
                     class="nav-link {{ request()->is('*ritual*') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-th"></i>

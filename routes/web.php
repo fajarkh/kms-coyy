@@ -17,6 +17,7 @@ Route::get('/dashboard', 'HomeController@index');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('ceritarakyat', 'CeritaRakyatController');
+    Route::resource('sejarah', 'SejarahController');
     Route::resource('ritual', 'RitualController');
     Route::resource('alatmusik', 'AlatMusikController');
     Route::resource('rumahadat', 'RumahAdatController');
