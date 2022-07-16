@@ -16,7 +16,7 @@
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        @include('layouts.header')
+        @include('layouts.admin.header')
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
@@ -25,7 +25,7 @@
                     class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">KMS Suku Dayak</span>
             </a>
-            @include('layouts.sidebar')
+            @include('layouts.admin.sidebar')
         </aside>
 
         <!-- Content Wrapper. Contains page content -->

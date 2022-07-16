@@ -22,9 +22,6 @@
 <body>
 
     <div class="super_container">
-
-        <!-- Header -->
-
         <header class="header">
             <div class="container">
                 <div class="row">
@@ -34,10 +31,12 @@
                             <nav class="main_nav">
                                 <ul>
                                     <li class="active"><a href="#">Beranda</a></li>
-                                    <li><a href="#">History</a></li>
-                                    {{-- <li><a href="#">Gadgets</a></li>
-                                    <li><a href="#">Lifestyle</a></li>
-                                    <li><a href="#">Video</a></li> --}}
+                                    <li><a href="#">Cerita Rakyat</a></li>
+                                    <li><a href="#">Sejarah</a></li>
+                                    <li><a href="#">Alat Musik</a></li>
+                                    <li><a href="#">Adat</a></li>
+                                    <li><a href="#">Senjata</a></li>
+                                    <li><a href="#">Tradisi</a></li>
                                     {{-- <li><a href="#">Login</a></li> --}}
                                 </ul>
                             </nav>

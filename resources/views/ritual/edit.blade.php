@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.admin.master')
 @section('content-header', 'Edit ' . $title . ' - ' . $item->nama)
 
 @section('content')
