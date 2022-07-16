@@ -54,7 +54,7 @@ class AlatMusikDataTable extends DataTable
                 ->orderable(false)
                 ->searchable(false),
             Column::make('nama'),
-            Column::make('deskripsi'),
+            Column::make('ringkasan')->title('Deskripsi'),
             Column::computed('action')
                 ->title('Aksi')
                 ->exportable(false)

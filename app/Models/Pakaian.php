@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Support\Str;
 class Pakaian extends Model
 {
     protected $table = 'pakaian';
@@ -13,6 +13,12 @@ class Pakaian extends Model
         'gambar',
         'id_budaya',
     ];
+    protected $appends = ['ringkasan'];
+
+    public function getRingkasanAttribute()
+    {
+        return Str::limit(strip_tags($this->deskripsi), 100, '...');
+    }
 
     public function budaya()
     {
