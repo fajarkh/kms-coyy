@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/dashboard', 'HomeController@index');
 
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
+    Route::get('/dashboard', 'HomeController@index');
     Route::resource('ceritarakyat', 'CeritaRakyatController');
     Route::resource('sejarah', 'SejarahController');
     Route::resource('ritual', 'RitualController');
