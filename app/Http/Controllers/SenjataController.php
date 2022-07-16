@@ -16,7 +16,7 @@ use UploadFileTrait;
         $this->view = 'senjata';
         $this->route = 'senjata';
         $this->title = 'Senjata';
-        $this->shareView();
+        $this->shareView(['type' => 'admin']);
     }
 
     public function index(SenjataDataTable $dataTable)

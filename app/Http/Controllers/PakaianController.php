@@ -15,7 +15,7 @@ class PakaianController extends Controller
         $this->view = 'pakaian';
         $this->route = 'pakaian';
         $this->title = 'Pakaian';
-        $this->shareView();
+        $this->shareView(['type' => 'admin']);
     }
 
     public function index(PakaianDataTable $dataTable)

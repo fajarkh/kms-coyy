@@ -16,13 +16,13 @@ class Controller extends BaseController
     protected $route;
     protected $title;
 
-    protected function shareView()
+    protected function shareView($attribute = [])
     {
         View::share(
             [
                 'title' => $this->title,
                 'route' => $this->route,
-                'view' => $this->view,
+                'view' => $this->targetView($attribute['type']),
             ]
         );
     }
@@ -35,8 +35,20 @@ class Controller extends BaseController
             return redirect()->route($this->route . '.index')->with(['success' => 'Data Berhasil Diubah!']);
         } elseif ($status == 'delete')
             return redirect()->route($this->route . '.index')->with(['success' => 'Data Berhasil Dihapus!']);
-        elseif($status == 'error') {
+        elseif ($status == 'error') {
             return redirect()->route($this->route . '.index')->with(['error' => 'Terjadi Kesalahan']);
+        }
+    }
+
+    private function targetView($type)
+    {
+        switch ($type) {
+            case 'admin':
+                $this->view = 'admin\\' . $this->view;
+                break;
+            default:
+                # code...
+                break;
         }
     }
 }

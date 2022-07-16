@@ -13,7 +13,7 @@ class RitualController extends Controller
         $this->view = 'ritual';
         $this->route = 'ritual';
         $this->title = 'Ritual';
-        $this->shareView();
+        $this->shareView(['type' => 'admin']);
     }
 
     public function index(RitualDataTable $dataTable)

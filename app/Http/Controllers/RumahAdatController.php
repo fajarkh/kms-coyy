@@ -16,7 +16,7 @@ class RumahAdatController extends Controller
         $this->view = 'rumah_adat';
         $this->route = 'rumahadat';
         $this->title = 'Rumah Adat';
-        $this->shareView();
+        $this->shareView(['type' => 'admin']);
     }
 
     public function index(RumahAdatDataTable $dataTable)

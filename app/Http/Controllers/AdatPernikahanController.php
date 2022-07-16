@@ -15,7 +15,7 @@ class AdatPernikahanController extends Controller
         $this->view = 'adat_pernikahan';
         $this->route = 'adatpernikahan';
         $this->title = 'Adat Pernikahan';
-        $this->shareView();
+        $this->shareView(['type' => 'admin']);
     }
 
     public function index(AdatPernikahanDataTable $dataTable)

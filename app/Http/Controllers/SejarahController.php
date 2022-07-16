@@ -15,7 +15,7 @@ class SejarahController extends Controller
         $this->view = 'sejarah';
         $this->route = 'sejarah';
         $this->title = 'Sejarah';
-        $this->shareView();
+        $this->shareView(['type' => 'admin']);
     }
 
     public function index(SejarahDataTable $dataTable)

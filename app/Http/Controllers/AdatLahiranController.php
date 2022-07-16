@@ -15,7 +15,7 @@ class AdatLahiranController extends Controller
         $this->view = 'adat_lahiran';
         $this->route = 'adatlahiran';
         $this->title = 'Adat Lahiran';
-        $this->shareView();
+        $this->shareView(['type' => 'admin']);
     }
 
     public function index(AdatLahiranDataTable $dataTable)

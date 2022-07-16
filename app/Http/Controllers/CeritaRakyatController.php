@@ -15,7 +15,7 @@ class CeritaRakyatController extends Controller
         $this->view = 'cerita_rakyat';
         $this->route = 'ceritarakyat';
         $this->title = 'Cerita Rakyat';
-        $this->shareView();
+        $this->shareView(['type' => 'admin']);
     }
 
     public function index(CeritaRakyatDataTable $dataTable)
