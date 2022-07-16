@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class HistoryRequest extends FormRequest
+class CeritaRakyatRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,8 @@ class HistoryRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'judul' => 'required',
-            'konten' => 'required'
+            'nama' => 'required',
+            'deskripsi' => 'required'
         ];
 
         if ($this->isMethod('post')) {

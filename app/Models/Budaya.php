@@ -46,4 +46,9 @@ class Budaya extends Model
     {
         return $this->hasMany('App\Senjata');
     }
+
+    public function ceritaRakyat()
+    {
+        return $this->hasMany('App\CeritaRakyat');
+    }
 }

@@ -2,14 +2,14 @@
 
 namespace App\DataTables;
 
-use App\Models\History;
+use App\Models\CeritaRakyat;
 use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Services\DataTable;
 
-class HistoryDataTable extends DataTable
+class CeritaRakyatDataTable extends DataTable
 {
-    private $route = 'history';
+    private $route = 'ceritarakyat';
 
     public function dataTable($query)
     {
@@ -25,7 +25,7 @@ class HistoryDataTable extends DataTable
             });
     }
 
-    public function query(History $model)
+    public function query(CeritaRakyat $model)
     {
         return $model->newQuery();
     }
@@ -33,7 +33,7 @@ class HistoryDataTable extends DataTable
     public function html()
     {
         $builder = $this->builder()
-            ->setTableId('tabelHistory')
+            ->setTableId('tabelCeritaRakyat')
             ->columns($this->getColumns())
             ->minifiedAjax()
             ->dom('Bfrtip')
@@ -54,8 +54,8 @@ class HistoryDataTable extends DataTable
                 ->title('No')
                 ->orderable(false)
                 ->searchable(false),
-            Column::make('judul'),
-            Column::make('konten'),
+            Column::make('nama'),
+            Column::make('deskripsi'),
             Column::computed('action')
                 ->title('Aksi')
                 ->exportable(false)
@@ -67,6 +67,6 @@ class HistoryDataTable extends DataTable
 
     protected function filename()
     {
-        return 'History_' . date('YmdHis');
+        return 'CeritaRakyat_' . date('YmdHis');
     }
 }

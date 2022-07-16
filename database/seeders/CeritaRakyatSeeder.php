@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\History;
+use App\Models\CeritaRakyat;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 
-class HistorySeeder extends Seeder
+class CeritaRakyatSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,11 +17,11 @@ class HistorySeeder extends Seeder
     {
         $faker = Faker::create('id_ID');
         for ($i = 1; $i <= 50; $i++) {
-            History::create(
+            CeritaRakyat::create(
                 [
-                    'judul' => $faker->name,
-                    'konten' => $faker->text,
-                    'kategori_id' => 1,
+                    'nama' => $faker->name,
+                    'deskripsi' => $faker->text,
+                    'budaya_id' => NULL,
                     'gambar' => 'gambar1.png'
                 ]
             );

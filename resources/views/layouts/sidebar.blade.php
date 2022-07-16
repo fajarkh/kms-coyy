@@ -28,10 +28,10 @@
                 </ul>
             </li> --}}
             <li class="nav-item">
-                <a href="{{ route('history.index') }}"
-                    class="nav-link {{ request()->is('*history*') ? 'active' : '' }}">
+                <a href="{{ route('ceritarakyat.index') }}"
+                    class="nav-link {{ request()->is('*ceritarakyat*') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-th"></i>
-                    <p>History
+                    <p>Cerita Rakyat
                         {{-- <span class="right badge badge-danger">New</span> --}}
                     </p>
                 </a>
