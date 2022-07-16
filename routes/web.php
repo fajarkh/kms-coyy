@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 // })->middleware('auth');
 
 // Route::get('/test', function () {
-    
+
 // });
 
 Route::get('/', function () {
@@ -15,7 +15,7 @@ Route::get('/', function () {
 });
 Route::get('/dashboard', 'HomeController@index');
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::resource('ceritarakyat', 'CeritaRakyatController');
     Route::resource('sejarah', 'SejarahController');
     Route::resource('ritual', 'RitualController');
