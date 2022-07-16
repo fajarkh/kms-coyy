@@ -2,8 +2,6 @@
     <!-- Sidebar Menu -->
     <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <!-- Add icons to the links using the .nav-icon class
-   with font-awesome or any other icon font library -->
             {{-- <li class="nav-item menu-open">
                 <a href="#" class="nav-link active">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -46,14 +44,6 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('ritual.index') }}"
-                    class="nav-link {{ request()->is('*ritual*') ? 'active' : '' }}">
-                    <i class="nav-icon fas fa-th"></i>
-                    <p>Ritual</p>
-                    {{-- <span class="right badge badge-danger">New</span> --}}
-                </a>
-            </li>
-            <li class="nav-item">
                 <a href="{{ route('alatmusik.index') }}"
                     class="nav-link {{ request()->is('*alatmusik*') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-th"></i>
@@ -86,14 +76,6 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('pakaian.index') }}"
-                    class="nav-link {{ request()->is('*pakaian*') ? 'active' : '' }}">
-                    <i class="nav-icon fas fa-th"></i>
-                    <p>Pakaian</p>
-                    {{-- <span class="right badge badge-danger">New</span> --}}
-                </a>
-            </li>
-            <li class="nav-item">
                 <a href="{{ route('senjata.index') }}"
                     class="nav-link {{ request()->is('*senjata*') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-th"></i>
@@ -101,6 +83,22 @@
                     {{-- <span class="right badge badge-danger">New</span> --}}
                 </a>
             </li>
+            {{-- <li class="nav-item">
+                <a href="{{ route('ritual.index') }}"
+                    class="nav-link {{ request()->is('*ritual*') ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>Ritual</p>
+                    <span class="right badge badge-danger">New</span>
+                </a>
+            </li> --}}
+            {{-- <li class="nav-item">
+                <a href="{{ route('pakaian.index') }}"
+                    class="nav-link {{ request()->is('*pakaian*') ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>Pakaian</p>
+                    <span class="right badge badge-danger">New</span>
+                </a>
+            </li> --}}
         </ul>
     </nav>
     <!-- /.sidebar-menu -->
