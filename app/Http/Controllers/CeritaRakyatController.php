@@ -39,7 +39,7 @@ class CeritaRakyatController extends Controller
         $item = CeritaRakyat::create([
             'gambar'     => $this->upload('cerita_rakyat', $request->file('gambar')),
             'nama'     => $request->nama,
-            'deskripsi'   => $request->deskripsi
+            'deskripsi'   => $request->deskripsi,
         ]);
         return $this->redirectWith($item->wasRecentlyCreated ? 'insert' : 'error');
     }
@@ -49,7 +49,7 @@ class CeritaRakyatController extends Controller
         $item = CeritaRakyat::findOrFail($id);
         $dataUpdate = [
             'nama'     => $request->nama,
-            'deskripsi'   => $request->deskripsi
+            'deskripsi'   => $request->deskripsi,
         ];
         if ($request->file('gambar') != "") {
             $dataUpdate['gambar'] = $this->upload('cerita_rakyat', $request->file('gambar'), $item->gambar);

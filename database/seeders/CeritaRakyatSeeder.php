@@ -8,11 +8,6 @@ use Faker\Factory as Faker;
 
 class CeritaRakyatSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         $faker = Faker::create('id_ID');
@@ -21,7 +16,7 @@ class CeritaRakyatSeeder extends Seeder
                 [
                     'nama' => $faker->name,
                     'deskripsi' => $faker->text,
-                    'budaya_id' => NULL,
+                    'budaya_id' => 1,
                     'gambar' => 'gambar1.png'
                 ]
             );

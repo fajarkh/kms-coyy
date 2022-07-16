@@ -15,7 +15,7 @@ class CreateCeritaRakyatTable extends Migration
     {
         Schema::create('cerita_rakyat', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('budaya_id')->nullable()->unsigned();
+            $table->bigInteger('budaya_id')->default(1)->unsigned();
             $table->foreign('budaya_id')->references('id')->on('budaya')->onUpdate('cascade')->onDelete('cascade');
             $table->string('nama');
             $table->text('deskripsi');

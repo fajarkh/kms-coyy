@@ -15,7 +15,7 @@ class CreateAlatMusikTable extends Migration
     {
         Schema::create('alat_musik', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('budaya_id')->nullable()->unsigned();
+            $table->bigInteger('budaya_id')->default(1)->unsigned();
             $table->foreign('budaya_id')->references('id')->on('budaya')->onUpdate('cascade')->onDelete('cascade');
             $table->string('nama')->nullable();
             $table->text('gambar')->nullable();
