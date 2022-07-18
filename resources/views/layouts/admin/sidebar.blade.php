@@ -68,9 +68,26 @@
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
                         <a href="{{ route('tradisi.index', ['model' => 'TradisiTabuko']) }}"
-                            class="nav-link {{ request()->is('*tradisi*') && request()->query('model', 'TradisiTabuko') ? 'active' : '' }}">
+                            class="nav-link {{ request()->is('*tradisi*') && request()->query('model') == 'TradisiTabuko' ? 'active' : '' }}">
                             <p>Tradisi Tabuko</p>
-                            {{-- <span class="right badge badge-danger">New</span> --}}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('tradisi.index', ['model' => 'TradisiHudoq']) }}"
+                            class="nav-link {{ request()->is('*tradisi*') && request()->query('model') == 'TradisiHudoq' ? 'active' : '' }}">
+                            <p>Tradisi Hudoq</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('tradisi.index', ['model' => 'TradisiNugal']) }}"
+                            class="nav-link {{ request()->is('*tradisi*') && request()->query('model') == 'TradisiNugal' ? 'active' : '' }}">
+                            <p>Tradisi Nugal</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('tradisi.index', ['model' => 'TradisiBelikong']) }}"
+                            class="nav-link {{ request()->is('*tradisi*') && request()->query('model') == 'TradisiBelikong' ? 'active' : '' }}">
+                            <p>Tradisi Belikong</p>
                         </a>
                     </li>
                 </ul>
