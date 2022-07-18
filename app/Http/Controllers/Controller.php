@@ -15,6 +15,7 @@ class Controller extends BaseController
     protected $view;
     protected $route;
     protected $title;
+    protected $model;
 
     protected function shareView($attribute = [])
     {
@@ -37,6 +38,15 @@ class Controller extends BaseController
             return redirect()->route($this->route . '.index')->with(['success' => 'Data Berhasil Dihapus!']);
         elseif ($status == 'error') {
             return redirect()->route($this->route . '.index')->with(['error' => 'Terjadi Kesalahan']);
+        }
+    }
+
+    protected  function getFromQueryParam($param)
+    {
+        if ($param == 'model') {
+            $model = request()->get($param);
+            $this->title = $this->title . str_replace($this->title, '', preg_replace('/(?<!\ )[A-Z]/', ' $0', $model));
+            return app("App\\Models\\" . $model);
         }
     }
 

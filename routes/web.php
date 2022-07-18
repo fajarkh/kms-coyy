@@ -25,6 +25,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::resource('adatpernikahan', 'AdatPernikahanController');
     Route::resource('pakaian', 'PakaianController');
     Route::resource('senjata', 'SenjataController');
+    Route::resource('tradisi', 'TradisiController');
 });
 
 Auth::routes();
