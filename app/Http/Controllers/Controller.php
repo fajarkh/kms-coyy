@@ -30,18 +30,23 @@ class Controller extends BaseController
 
     protected function redirectWith($status)
     {
+        $route_index = route($this->route . '.index');
+        if ($this->model) {
+            $route_index = route($this->route . '.index', ['model' => class_basename($this->model)]);
+        }
+        
         if ($status == 'insert') {
-            return redirect()->route($this->route . '.index')->with(['success' => 'Data Berhasil Disimpan!']);
+            return redirect()->to($route_index)->with(['success' => 'Data Berhasil Disimpan!']);
         } elseif ($status == 'update') {
-            return redirect()->route($this->route . '.index')->with(['success' => 'Data Berhasil Diubah!']);
+            return redirect()->to($route_index)->with(['success' => 'Data Berhasil Diubah!']);
         } elseif ($status == 'delete')
-            return redirect()->route($this->route . '.index')->with(['success' => 'Data Berhasil Dihapus!']);
+            return redirect()->to($route_index)->with(['success' => 'Data Berhasil Dihapus!']);
         elseif ($status == 'error') {
-            return redirect()->route($this->route . '.index')->with(['error' => 'Terjadi Kesalahan']);
+            return redirect()->to($route_index)->with(['error' => 'Terjadi Kesalahan']);
         }
     }
 
-    protected  function getFromQueryParam($param)
+    protected function getFromQueryParam($param)
     {
         if ($param == 'model') {
             $model = request()->get($param);
@@ -54,7 +59,7 @@ class Controller extends BaseController
     {
         switch ($type) {
             case 'admin':
-                $this->view = 'admin\\' . $this->view;
+                return $this->view = 'admin\\' . $this->view;
                 break;
             default:
                 # code...
