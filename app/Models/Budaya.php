@@ -14,46 +14,66 @@ class Budaya extends Model
 
     public function admin()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\Models\User', 'user_id');
     }
 
     public function alatMusik()
     {
-        return $this->hasMany('App\AlatMusik');
+        return $this->hasMany('App\Models\AlatMusik');
     }
 
     public function rumahAdat()
     {
-        return $this->hasMany('App\RumahAdat');
+        return $this->hasMany('App\Models\RumahAdat');
     }
 
     public function adatLahiran()
     {
-        return $this->hasMany('App\AdatLahiran');
+        return $this->hasMany('App\Models\AdatLahiran');
     }
     
     public function adatPerkawinan()
     {
-        return $this->hasMany('App\AdatPerkawinan');
+        return $this->hasMany('App\Models\AdatPerkawinan');
     }
 
     public function pakaian()
     {
-        return $this->hasMany('App\Pakaian');
+        return $this->hasMany('App\Models\Pakaian');
     }
 
     public function senjata()
     {
-        return $this->hasMany('App\Senjata');
+        return $this->hasMany('App\Models\Senjata');
     }
 
     public function ceritaRakyat()
     {
-        return $this->hasMany('App\CeritaRakyat');
+        return $this->hasMany('App\Models\CeritaRakyat');
     }
 
     public function sejarah()
     {
-        return $this->hasMany('App\Sejarah');
+        return $this->hasMany('App\Models\Sejarah');
+    }
+
+    public function tradisiTabuko()
+    {
+        return $this->hasMany('App\Models\TradisiTabuko');
+    }
+
+    public function tradisiNugal()
+    {
+        return $this->hasMany('App\Models\TradisiNugal');
+    }
+    
+    public function tradisiHudoq()
+    {
+        return $this->hasMany('App\Models\TradisiHudoq');
+    }
+    
+    public function tradisiBelikong()
+    {
+        return $this->hasMany('App\Models\TradisiBelikong');
     }
 }

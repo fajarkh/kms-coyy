@@ -61,8 +61,11 @@ class Controller extends BaseController
             case 'admin':
                 return $this->view = 'admin\\' . $this->view;
                 break;
+            case 'front':
+                return $this->view = 'front\\' . $this->view;
+                break;
             default:
-                # code...
+                return $this->view;
                 break;
         }
     }

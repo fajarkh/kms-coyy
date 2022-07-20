@@ -46,6 +46,6 @@ class User extends Authenticatable
 
     public function budaya()
     {
-        return $this->hasMany('App\Budaya');
+        return $this->hasMany('App\Models\Budaya');
     }
 }

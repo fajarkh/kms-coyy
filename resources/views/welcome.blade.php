@@ -1,36 +1,8 @@
 @include('layouts.user.header')
-<!-- Menu -->
-<div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
-    <div class="menu_close_container">
-        <div class="menu_close">
-            <div></div>
-            <div></div>
-        </div>
-    </div>
-    <div class="logo menu_mm"><a href="#">KMS Suku Dayak</a></div>
-    <div class="search">
-        <form action="#">
-            <input type="search" class="header_search_input menu_mm" required="required" placeholder="Cari...">
-            <img class="header_search_icon menu_mm" src="{{ asset('avision/images/search_2.png') }}" alt="">
-        </form>
-    </div>
-    <nav class="menu_nav">
-        <ul class="menu_mm">
-            <li class="menu_mm"><a href="#">Beranda</a></li>
-            <li class="menu_mm"><a href="#">History</a></li>
-        </ul>
-    </nav>
-</div>
-
-<!-- Home -->
 
 <div class="home">
-
-    <!-- Home Slider -->
-
     <div class="home_slider_container">
         <div class="owl-carousel owl-theme home_slider">
-
             <!-- Slider Item -->
             <div class="owl-item">
                 <div class="home_slider_background"
@@ -67,7 +39,6 @@
                 <div class="similar_posts_container">
                     <div class="container">
                         <div class="row d-flex flex-row align-items-end">
-
                             <!-- Similar Post -->
                             <div class="col-lg-3 col-md-6 similar_post_col">
                                 <div class="similar_post trans_200">
@@ -91,7 +62,6 @@
                                         Most</a>
                                 </div>
                             </div>
-
                         </div>
                     </div>
 
@@ -106,7 +76,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
 
@@ -143,7 +112,7 @@
                 </div>
 
                 <!-- Similar Posts -->
-                <div class="similar_posts_container">
+                {{-- <div class="similar_posts_container">
                     <div class="container">
                         <div class="row d-flex flex-row align-items-end">
 
@@ -186,7 +155,7 @@
                         </div>
                     </div>
 
-                </div>
+                </div> --}}
             </div>
 
             <!-- Slider Item -->
@@ -222,7 +191,7 @@
                 </div>
 
                 <!-- Similar Posts -->
-                <div class="similar_posts_container">
+                {{-- <div class="similar_posts_container">
                     <div class="container">
                         <div class="row d-flex flex-row align-items-end">
 
@@ -265,7 +234,7 @@
                         </div>
                     </div>
 
-                </div>
+                </div> --}}
             </div>
 
         </div>
@@ -296,8 +265,6 @@
 
     </div>
 </div>
-
-<!-- Page Content -->
 
 <div class="page_content">
     <div class="container">
@@ -823,4 +790,5 @@
         </div>
     </div>
 </div>
+
 @include('layouts.user.footer')

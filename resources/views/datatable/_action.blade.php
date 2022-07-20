@@ -8,9 +8,9 @@
         @php $url = isset($route_destroy) ? (isset($route_destroy['custom']) ? $route_destroy['custom'] : [route($route_destroy, $model->id)]) : null; @endphp
         {!! Form::open(['url' => $url, 'method' => 'DELETE']) !!}
         @if (isset($route_show))
-            <a class="dropdown-item" href="{{ route($route_show, $model->id) }}">
+            <a class="dropdown-item" href="{{ route($route_show, ['model' => class_basename($model), 'id' => $model->id]) }}" target="_blank">
                 <i class="ti-eye"></i>
-                Detail
+                Lihat
             </a>
         @endif
         @if (isset($route_edit))

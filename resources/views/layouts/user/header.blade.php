@@ -20,7 +20,6 @@
 </head>
 
 <body>
-
     <div class="super_container">
         <header class="header">
             <div class="container">
@@ -31,7 +30,7 @@
                             <nav class="main_nav">
                                 <ul>
                                     <li class="active"><a href="#">Beranda</a></li>
-                                    <li><a href="#">Cerita Rakyat</a></li>
+                                    <li><a href="{{ route('kategori', 'CeritaRakyat') }}">Cerita Rakyat</a></li>
                                     <li><a href="#">Sejarah</a></li>
                                     <li><a href="#">Alat Musik</a></li>
                                     <li><a href="#">Adat</a></li>
@@ -40,17 +39,12 @@
                                 </ul>
                             </nav>
                             <div class="search_container ml-auto">
-                                {{-- <div class="weather">
-                                    <div class="temperature">+10°</div>
-                                    <img class="weather_icon" src="{{ asset('avision/images/cloud.png') }}" alt="">
-                                </div> --}}
                                 <form action="#">
                                     <input type="search" class="header_search_input" required="required"
                                         placeholder="Cari...">
                                     <img class="header_search_icon" src="{{ asset('avision/images/search.png') }}"
                                         alt="">
                                 </form>
-
                             </div>
                             <div class="hamburger ml-auto menu_mm">
                                 <i class="fa fa-bars trans_200 menu_mm" aria-hidden="true"></i>
@@ -60,3 +54,24 @@
                 </div>
             </div>
         </header>
+
+        <div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+            <div class="menu_close_container">
+                <div class="menu_close">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="logo menu_mm"><a href="#">KMS Suku Dayak</a></div>
+            <nav class="menu_nav">
+                <ul class="menu_mm">
+                    <li class="menu_mm"><a href="#">Beranda</a></li>
+                    <li class="menu_mm"><a href="{{ route('kategori', 'CeritaRakyat') }}">Cerita Rakyat</a></li>
+                    <li class="menu_mm"><a href="#">Sejarah</a></li>
+                    <li class="menu_mm"><a href="#">Alat Musik</a></li>
+                    <li class="menu_mm"><a href="#">Adat</a></li>
+                    <li class="menu_mm"><a href="#">Senjata</a></li>
+                    <li class="menu_mm"><a href="#">Tradisi</a></li>
+                </ul>
+            </nav>
+        </div>

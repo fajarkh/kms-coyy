@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Budaya;
+use App\Models\Models\Budaya;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 

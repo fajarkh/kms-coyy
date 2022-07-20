@@ -24,11 +24,16 @@ class CeritaRakyat extends Model
 
     public function budaya()
     {
-        return $this->belongsTo('App\Budaya');
+        return $this->belongsTo('App\Models\Budaya');
     }
 
     public function getRingkasanAttribute()
     {
         return Str::limit(strip_tags($this->deskripsi), 100, '...');
+    }
+
+    public function getKategoriAttribute()
+    {
+        return preg_replace('/(?<!\ )[A-Z]/', ' $0', class_basename($this));
     }
 }

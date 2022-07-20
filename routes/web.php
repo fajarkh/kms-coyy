@@ -14,6 +14,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/kategori/{kategori}', 'FrontController@kategori')->name('kategori');
+Route::get('/post/{model}/{id}', 'FrontController@show')->name('post.show');
+
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::get('/dashboard', 'HomeController@index');
     Route::resource('ceritarakyat', 'CeritaRakyatController');
