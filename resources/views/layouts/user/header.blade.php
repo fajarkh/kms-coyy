@@ -8,11 +8,11 @@
                         <ul>
                             <li class="active"><a href="#">Beranda</a></li>
                             <li><a href="{{ route('kategori', 'CeritaRakyat') }}">Cerita Rakyat</a></li>
-                            <li><a href="#">Sejarah</a></li>
-                            <li><a href="#">Alat Musik</a></li>
-                            <li><a href="#">Adat</a></li>
-                            <li><a href="#">Senjata</a></li>
-                            <li><a href="#">Tradisi</a></li>
+                            <li><a href="{{ route('kategori', 'Sejarah') }}">Sejarah</a></li>
+                            <li><a href="{{ route('kategori', 'AlatMusuk') }}">Alat Musik</a></li>
+                            <li><a href="{{ route('kategori', 'Adat') }}">Adat</a></li>
+                            <li><a href="{{ route('kategori', 'Senjata') }}">Senjata</a></li>
+                            <li><a href="{{ route('kategori', 'Tradisi') }}">Tradisi</a></li>
                         </ul>
                     </nav>
                     <div class="search_container ml-auto">
@@ -43,11 +43,11 @@
         <ul class="menu_mm">
             <li class="menu_mm"><a href="#">Beranda</a></li>
             <li class="menu_mm"><a href="{{ route('kategori', 'CeritaRakyat') }}">Cerita Rakyat</a></li>
-            <li class="menu_mm"><a href="#">Sejarah</a></li>
-            <li class="menu_mm"><a href="#">Alat Musik</a></li>
-            <li class="menu_mm"><a href="#">Adat</a></li>
-            <li class="menu_mm"><a href="#">Senjata</a></li>
-            <li class="menu_mm"><a href="#">Tradisi</a></li>
+            <li class="menu_mm"><a href="{{ route('kategori', 'Sejarah') }}">Sejarah</a></li>
+            <li class="menu_mm"><a href="{{ route('kategori', 'AlatMusik') }}">Alat Musik</a></li>
+            <li class="menu_mm"><a href="{{ route('kategori', 'Adat') }}">Adat</a></li>
+            <li class="menu_mm"><a href="{{ route('kategori', 'Senjata') }}">Senjata</a></li>
+            <li class="menu_mm"><a href="{{ route('kategori', 'Tradisi') }}">Tradisi</a></li>
         </ul>
     </nav>
 </div>
