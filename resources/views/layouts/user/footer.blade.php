@@ -33,28 +33,11 @@
             <div class="col-lg-3 order-lg-2 order-1">
                 <div class="subscribe">
                     <div class="subscribe_background"></div>
-                    {{-- <div class="subscribe_content">
-                                <div class="subscribe_title">Subscribe</div>
-                                <form action="#">
-                                    <input type="email" class="sub_input" placeholder="Your Email"
-                                        required="required">
-                                    <button class="sub_button">
-                                        <svg version="1.1" id="link_arrow_1" xmlns="http://www.w3.org/2000/svg"
-                                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="19px"
-                                            height="13px" viewBox="0 0 19 13" enable-background="new 0 0 19 13"
-                                            xml:space="preserve">
-                                            <polygon fill="#FFFFFF"
-                                                points="12.475,0 11.061,0 17.081,6.021 0,6.021 0,7.021 17.038,7.021 11.06,13 12.474,13 18.974,6.5 " />
-                                        </svg>
-                                    </button>
-                                </form>
-                            </div> --}}
                 </div>
             </div>
         </div>
     </div>
 </footer>
-</div>
 
 <script src="{{ asset('avision/js/jquery-3.2.1.min.js') }}"></script>
 <script src="{{ asset('avision/styles/bootstrap4/popper.js') }}"></script>
@@ -64,7 +47,13 @@
 <script src="{{ asset('avision/plugins/easing/easing.js') }}"></script>
 <script src="{{ asset('avision/plugins/masonry/masonry.js') }}"></script>
 <script src="{{ asset('avision/plugins/masonry/images_loaded.js') }}"></script>
+<script src="{{ asset('avision/plugins/parallax-js-master/parallax.min.js') }}"></script>
+<script src="{{ asset('avision/js/post.js') }}"></script>
 <script src="{{ asset('avision/js/custom.js') }}"></script>
+
+<script>
+    $('div.deskripsi p').addClass('post_p');
+</script>
 </body>
 
 </html>

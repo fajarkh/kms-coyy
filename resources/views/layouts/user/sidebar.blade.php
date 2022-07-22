@@ -289,7 +289,7 @@
 
         <!-- Advertising -->
 
-        <div class="sidebar_section">
+        {{-- <div class="sidebar_section">
             <div class="advertising">
                 <div class="advertising_background"
                     style="background-image:url({{ asset('avision/images/post_17.jpg') }})"></div>
@@ -299,7 +299,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <!-- Newest Videos -->
 
@@ -589,8 +589,7 @@
         </div>
 
         <!-- Advertising 2 -->
-
-        <div class="sidebar_section">
+        {{-- <div class="sidebar_section">
             <div class="advertising_2">
                 <div class="advertising_background"
                     style="background-image:url({{ asset('avision/images/post_18.jpg') }})"></div>
@@ -599,7 +598,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <!-- Future Events -->
 
