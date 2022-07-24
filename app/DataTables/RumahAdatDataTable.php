@@ -18,6 +18,7 @@ class RumahAdatDataTable extends DataTable
             ->addColumn('action', function ($query) {
                 return view('datatable._action', [
                     'model' => $query,
+                    'route_show' => 'post.show',
                     'route_edit' => $this->route . '.edit',
                     'route_destroy' => $this->route . '.destroy'
                 ]);

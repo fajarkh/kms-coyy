@@ -23,6 +23,7 @@ class TradisiDataTable extends DataTable
             ->addColumn('action', function ($query) {
                 return view('datatable._action', [
                     'model' => $query,
+                    'route_show' => 'post.show',
                     'route_edit' => ['custom' => $this->generateRoute('edit', $query)],
                     'route_destroy' => ['custom' => $this->generateRoute('destroy', $query)]
                 ]);
@@ -76,6 +77,9 @@ class TradisiDataTable extends DataTable
 
     private function generateRoute($type, $model = null)
     {
+        if ($type == 'show') {
+            return route('post.show', ['model' => class_basename($this->model)]);
+        }
         if ($type == 'create') {
             return route($this->route . '.create', ['model' => class_basename($this->model)]);
         }
