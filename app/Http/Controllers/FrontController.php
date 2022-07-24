@@ -14,7 +14,8 @@ class FrontController extends Controller
 
     public function kategori($kategori)
     {
-        return view('layouts.user.list');
+        $kategori != 'Semua'  ? $kategori = ' | ' . preg_replace('/(?<!\ )[A-Z]/', ' $0', $kategori) : $kategori = '';
+        return view('layouts.user.category', compact('kategori'));
     }
 
     public function show($model, $id)

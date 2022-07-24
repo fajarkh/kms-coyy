@@ -3,16 +3,13 @@
         <div class="row">
             <div class="col">
                 <div class="header_content d-flex flex-row align-items-center justify-content-start">
-                    <div class="logo"><a href="#">KMS Suku Dayak</a></div>
+                    <div class="logo"><a href="/">KMS Suku Dayak</a></div>
                     <nav class="main_nav">
                         <ul>
-                            <li class="active"><a href="#">Beranda</a></li>
-                            <li><a href="{{ route('kategori', 'CeritaRakyat') }}">Cerita Rakyat</a></li>
-                            <li><a href="{{ route('kategori', 'Sejarah') }}">Sejarah</a></li>
-                            <li><a href="{{ route('kategori', 'AlatMusuk') }}">Alat Musik</a></li>
-                            <li><a href="{{ route('kategori', 'Adat') }}">Adat</a></li>
-                            <li><a href="{{ route('kategori', 'Senjata') }}">Senjata</a></li>
-                            <li><a href="{{ route('kategori', 'Tradisi') }}">Tradisi</a></li>
+                            <li class="active"><a href="/">Beranda</a></li>
+                            <li class="menu_mm"><a href="{{ route('kategori', 'Semua') }}">Kategori</a></li>
+                            <li class="menu_mm"><a href="{{ route('kategori', 'Sejarah') }}">Tentang</a></li>
+                            <li class="menu_mm"><a href="{{ route('login') }}">Login</a></li>
                         </ul>
                     </nav>
                     <div class="search_container ml-auto">
@@ -42,12 +39,9 @@
     <nav class="menu_nav">
         <ul class="menu_mm">
             <li class="menu_mm"><a href="#">Beranda</a></li>
-            <li class="menu_mm"><a href="{{ route('kategori', 'CeritaRakyat') }}">Cerita Rakyat</a></li>
-            <li class="menu_mm"><a href="{{ route('kategori', 'Sejarah') }}">Sejarah</a></li>
-            <li class="menu_mm"><a href="{{ route('kategori', 'AlatMusik') }}">Alat Musik</a></li>
-            <li class="menu_mm"><a href="{{ route('kategori', 'Adat') }}">Adat</a></li>
-            <li class="menu_mm"><a href="{{ route('kategori', 'Senjata') }}">Senjata</a></li>
-            <li class="menu_mm"><a href="{{ route('kategori', 'Tradisi') }}">Tradisi</a></li>
+            <li class="menu_mm"><a href="{{ route('kategori', 'All') }}">Kategori</a></li>
+            <li class="menu_mm"><a href="{{ route('kategori', 'Sejarah') }}">Tentang</a></li>
+            <li class="menu_mm"><a href="{{ route('kategori', 'AlatMusik') }}">Login</a></li>
         </ul>
     </nav>
 </div>
