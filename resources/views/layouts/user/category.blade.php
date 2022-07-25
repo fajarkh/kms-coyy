@@ -86,321 +86,79 @@
                                 </div>
                                 <div class="section_content">
                                     <div class="grid clearfix">
-
-                                        <!-- Small Card With Image -->
-                                        <div class="card card_small_with_image grid-item">
-                                            <img class="card-img-top" src="{{ asset('avision/images/post_10.jpg') }}"
-                                                alt="">
-                                            <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="post.html">How Did van
-                                                        Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in
-                                                        Physics?</a></div>
-                                                <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29,
-                                                        2017 at 9:48 am</span></small>
-                                            </div>
-                                        </div>
-
-                                        <!-- Small Card Without Image -->
-                                        <div class="card card_default card_small_no_image grid-item">
-                                            <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="post.html">How Did van
-                                                        Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in
-                                                        Physics?</a></div>
-                                                <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29,
-                                                        2017 at 9:48 am</span></small>
-                                            </div>
-                                        </div>
-
-                                        <!-- Small Card With Image -->
-                                        <div class="card card_small_with_image grid-item">
-                                            <img class="card-img-top" src="{{ asset('avision/images/post_15.jpg') }}"
-                                                alt="">
-                                            <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="post.html">How Did van
-                                                        Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in
-                                                        Physics?</a></div>
-                                                <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29,
-                                                        2017 at 9:48 am</span></small>
-                                            </div>
-                                        </div>
-
-                                        <!-- Small Card With Image -->
-                                        <div class="card card_small_with_image grid-item">
-                                            <img class="card-img-top" src="{{ asset('avision/images/post_13.jpg') }}"
-                                                alt="https://unsplash.com/@jakobowens1">
-                                            <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="post.html">How Did van
-                                                        Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in
-                                                        Physics?</a></div>
-                                                <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29,
-                                                        2017 at 9:48 am</span></small>
-                                            </div>
-                                        </div>
-
-                                        <!-- Small Card With Background -->
-                                        <div class="card card_default card_small_with_background grid-item">
-                                            <div class="card_background"
-                                                style="background-image:url({{ asset('avision/images/post_11.jpg') }})">
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="post.html">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most Complex
-                                                        Concepts in Physics?</a></div>
-                                                <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29,
-                                                        2017 at 9:48 am</span></small>
-                                            </div>
-                                        </div>
-
-                                        <!-- Small Card With Background -->
-                                        <div class="card card_default card_small_with_background grid-item">
-                                            <div class="card_background"
-                                                style="background-image:url({{ asset('avision/images/post_16.jpg') }})">
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="post.html">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most Complex
-                                                        Concepts in Physics?</a></div>
-                                                <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29,
-                                                        2017 at 9:48 am</span></small>
-                                            </div>
-                                        </div>
-
-                                        <!-- Small Card With Image -->
-                                        <div class="card card_small_with_image grid-item">
-                                            <img class="card-img-top" src="{{ asset('avision/images/post_14.jpg') }}"
-                                                alt="">
-                                            <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="post.html">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most Complex
-                                                        Concepts in Physics?</a></div>
-                                                <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29,
-                                                        2017 at 9:48 am</span></small>
-                                            </div>
-                                        </div>
-
-                                        <!-- Small Card Without Image -->
-                                        <div class="card card_default card_small_no_image grid-item">
-                                            <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="post.html">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most Complex
-                                                        Concepts in Physics?</a></div>
-                                                <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29,
-                                                        2017 at 9:48 am</span></small>
-                                            </div>
-                                        </div>
-
-                                        <!-- Small Card Without Image -->
-                                        <div class="card card_default card_small_no_image grid-item">
-                                            <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="post.html">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most Complex
-                                                        Concepts in Physics?</a></div>
-                                                <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29,
-                                                        2017 at 9:48 am</span></small>
-                                            </div>
-                                        </div>
-
-                                        <!-- Default Card With Background -->
-                                        <div class="card card_default card_default_with_background grid-item">
-                                            <div class="card_background"
-                                                style="background-image:url({{ asset('avision/images/post_12.jpg') }})">
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="post.html">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most</a></div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Default Card With Background -->
-                                        <div class="card card_default card_default_with_background grid-item">
-                                            <div class="card_background"
-                                                style="background-image:url({{ asset('avision/images/post_6.jpg') }})">
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="post.html">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most</a></div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Small Card With Background -->
-                                        <div class="card card_default card_small_with_background grid-item">
-                                            <div class="card_background"
-                                                style="background-image:url({{ asset('avision/images/post_19.jpg') }})">
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="post.html">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most Complex
-                                                        Concepts in Physics?</a></div>
-                                                <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29,
-                                                        2017 at 9:48 am</span></small>
-                                            </div>
-                                        </div>
-
-                                        <!-- Small Card Without Image -->
-                                        <div class="card card_default card_small_no_image grid-item">
-                                            <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="post.html">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most Complex
-                                                        Concepts in Physics?</a></div>
-                                                <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29,
-                                                        2017 at 9:48 am</span></small>
-                                            </div>
-                                        </div>
-
-                                        <!-- Small Card Without Image -->
-                                        <div class="card card_default card_small_no_image grid-item">
-                                            <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="post.html">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most Complex
-                                                        Concepts in Physics?</a></div>
-                                                <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29,
-                                                        2017 at 9:48 am</span></small>
-                                            </div>
-                                        </div>
-
-                                        <!-- Small Card With Image -->
-                                        <div class="card card_small_with_image grid-item">
-                                            <img class="card-img-top" src="{{ asset('avision/images/post_5.jpg') }}"
-                                                alt="">
-                                            <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="post.html">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most Complex
-                                                        Concepts in Physics?</a></div>
-                                                <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29,
-                                                        2017 at 9:48 am</span></small>
-                                            </div>
-                                        </div>
-
-                                        <!-- Small Card With Image -->
-                                        <div class="card card_small_with_image grid-item">
-                                            <img class="card-img-top" src="{{ asset('avision/images/post_10.jpg') }}"
-                                                alt="">
-                                            <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="post.html">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most Complex
-                                                        Concepts in Physics?</a></div>
-                                                <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29,
-                                                        2017 at 9:48 am</span></small>
-                                            </div>
-                                        </div>
-
-                                        <!-- Small Card Without Image -->
-                                        <div class="card card_default card_small_no_image grid-item">
-                                            <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="post.html">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most Complex
-                                                        Concepts in Physics?</a></div>
-                                                <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29,
-                                                        2017 at 9:48 am</span></small>
-                                            </div>
-                                        </div>
-
-                                        <!-- Small Card With Image -->
-                                        <div class="card card_small_with_image grid-item">
-                                            <img class="card-img-top" src="{{ asset('avision/images/post_20.jpg') }}"
-                                                alt="https://unsplash.com/@jakobowens1">
-                                            <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="post.html">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most Complex
-                                                        Concepts in Physics?</a></div>
-                                                <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29,
-                                                        2017 at 9:48 am</span></small>
-                                            </div>
-                                        </div>
-
-                                        <!-- Small Card With Background -->
-                                        <div class="card card_default card_small_with_background grid-item">
-                                            <div class="card_background"
-                                                style="background-image:url({{ asset('avision/images/post_4.jpg') }})">
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="post.html">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most Complex
-                                                        Concepts in Physics?</a></div>
-                                                <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29,
-                                                        2017 at 9:48 am</span></small>
-                                            </div>
-                                        </div>
-
-                                        <!-- Small Card With Background -->
-                                        <div class="card card_default card_small_with_background grid-item">
-                                            <div class="card_background"
-                                                style="background-image:url({{ asset('avision/images/post_21.jpg') }})">
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="post.html">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most Complex
-                                                        Concepts in Physics?</a></div>
-                                                <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29,
-                                                        2017 at 9:48 am</span></small>
-                                            </div>
-                                        </div>
-
-                                        <!-- Small Card With Image -->
-                                        <div class="card card_small_with_image grid-item">
-                                            <img class="card-img-top" src="{{ asset('avision/images/post_22.jpg') }}"
-                                                alt="">
-                                            <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="post.html">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most Complex
-                                                        Concepts in Physics?</a></div>
-                                                <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29,
-                                                        2017 at 9:48 am</span></small>
-                                            </div>
-                                        </div>
-
-                                        <!-- Small Card Without Image -->
-                                        <div class="card card_default card_small_no_image grid-item">
-                                            <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="post.html">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most Complex
-                                                        Concepts in Physics?</a></div>
-                                                <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29,
-                                                        2017 at 9:48 am</span></small>
-                                            </div>
-                                        </div>
-
-                                        <!-- Small Card Without Image -->
-                                        <div class="card card_default card_small_no_image grid-item">
-                                            <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="post.html">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most Complex
-                                                        Concepts in Physics?</a></div>
-                                                <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29,
-                                                        2017 at 9:48 am</span></small>
-                                            </div>
-                                        </div>
-
-                                        <!-- Default Card With Background -->
-                                        <div class="card card_default card_default_with_background grid-item">
-                                            <div class="card_background"
-                                                style="background-image:url({{ asset('avision/images/post_23.jpg') }})">
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="post.html">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most</a></div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Default Card With Background -->
-                                        <div class="card card_default card_default_with_background grid-item">
-                                            <div class="card_background"
-                                                style="background-image:url({{ asset('avision/images/post_24.jpg') }})">
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="post.html">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most</a></div>
-                                            </div>
-                                        </div>
-
+                                        @foreach ($model as $items)
+                                            @foreach ($items as $item)
+                                                @if ($loop->index == 0)
+                                                    <div class="card card_small_with_image grid-item">
+                                                        <img class="card-img-top"
+                                                            src="{{ asset('avision/images/post_15.jpg') }}"
+                                                            alt="">
+                                                        <div class="card-body">
+                                                            <div class="card-title card-title-small"><a
+                                                                    href="post.html">{{ $item->nama }}</a>
+                                                            </div>
+                                                            <small class="post_meta">
+                                                                <a href="#">Admin</a>
+                                                                <span>{{ Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM Y') }}</span>
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                @elseif ($loop->index == 1)
+                                                    <div class="card card_default card_small_with_background grid-item">
+                                                        <div class="card_background"
+                                                            style="background-image:url({{ asset('avision/images/post_21.jpg') }})">
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <div class="card-title card-title-small"><a
+                                                                    href="post.html">{{ $item->nama }}</a>
+                                                            </div>
+                                                            <small class="post_meta">
+                                                                <a href="#">Admin</a>
+                                                                <span>{{ Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM Y') }}</span>
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                @elseif ($loop->index == 2)
+                                                    <div class="card card_small_with_image grid-item">
+                                                        <img class="card-img-top"
+                                                            src="{{ asset('avision/images/post_15.jpg') }}"
+                                                            alt="">
+                                                        <div class="card-body">
+                                                            <div class="card-title card-title-small"><a
+                                                                    href="post.html">{{ $item->nama }}</a>
+                                                            </div>
+                                                            <small class="post_meta">
+                                                                <a href="#">Admin</a>
+                                                                <span>{{ Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM Y') }}</span>
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                @elseif ($loop->index == 3)
+                                                    <div class="card card_small_with_image grid-item">
+                                                        <img class="card-img-top"
+                                                            src="{{ asset('avision/images/post_13.jpg') }}"
+                                                            alt="https://unsplash.com/@jakobowens1">
+                                                        <div class="card-body">
+                                                            <div class="card-title card-title-small"><a
+                                                                    href="post.html">{{ $item->nama }}</a>
+                                                            </div>
+                                                            <small class="post_meta">
+                                                                <a href="#">Admin</a>
+                                                                <span>{{ Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM Y') }}</span>
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                @endif
+                                            @endforeach
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
 
                         </div>
-                        <div class="load_more">
+                        {{-- <div class="load_more">
                             <div id="load_more" class="load_more_button text-center trans_200">Load More</div>
-                        </div>
+                        </div> --}}
                     </div>
 
                     <!-- Sidebar -->

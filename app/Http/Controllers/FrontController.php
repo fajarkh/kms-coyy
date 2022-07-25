@@ -14,8 +14,22 @@ class FrontController extends Controller
 
     public function kategori($kategori)
     {
-        $kategori != 'Semua'  ? $kategori = ' | ' . preg_replace('/(?<!\ )[A-Z]/', ' $0', $kategori) : $kategori = '';
-        return view('layouts.user.category', compact('kategori'));
+        $model = [];
+        switch ($kategori) {
+            case 'Semua':
+                $model = [];
+                $kategori = '';
+                break;
+            case 'Adat':
+                $model = $this->getAdatData()->chunk(4);
+                $kategori = $this->setTitle($kategori);
+                break;
+            default:
+                $model = app("App\\Models\\" . $kategori)->all()->chunk(4);
+                $kategori = $this->setTitle($kategori);
+                break;
+        }
+        return view('layouts.user.category', compact('kategori', 'model'));
     }
 
     public function show($model, $id)
@@ -23,5 +37,17 @@ class FrontController extends Controller
         $model = app("App\\Models\\" . $model);
         $post = $model->find($id);
         return view($this->view . '.show', compact('post'));
+    }
+
+    private function getAdatData()
+    {
+        return collect([])
+            ->concat(app("App\\Models\\AdatLahiran")->all())
+            ->concat(app("App\\Models\\AdatPernikahan")->all());
+    }
+
+    private function setTitle($string)
+    {
+        return ' | ' . preg_replace('/(?<!\ )[A-Z]/', ' $0', $string);
     }
 }
