@@ -983,8 +983,7 @@ section
 }
 .card_small_with_background .card-title a
 {
-	color: rgba(0,0,0,1);
-	text-shadow: -1px -1px 0 #ededed, 1px -1px 0 #ededed, -1px 1px 0 #ededed, 1px 1px 0 #ededed;
+	color: white;
 }
 .card_background
 {

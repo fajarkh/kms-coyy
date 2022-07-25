@@ -114,7 +114,8 @@
                                                 @endphp
                                                 @if ($loop->index == 0)
                                                     <div class="card card_small_with_image grid-item">
-                                                        <img class="card-img-top" src="{{ $imageSrc }}">
+                                                        <img class="card-img-top" src="{{ $imageSrc }}"
+                                                            style="filter: brightness(75%)">
                                                         <div class="card-body">
                                                             <div class="card-title card-title-small">
                                                                 <a href="{{ $routeView }}">{{ $item->nama }}</a>
@@ -128,7 +129,8 @@
                                                 @elseif ($loop->index == 1)
                                                     <div class="card card_default card_small_with_background grid-item">
                                                         <div class="card_background"
-                                                            style="background-image:url({{ $imageSrc }})"></div>
+                                                            style="background-image:url({{ $imageSrc }}); filter: brightness(75%)">
+                                                        </div>
                                                         <div class="card-body">
                                                             <div class="card-title card-title-small">
                                                                 <a href="{{ $routeView }}">{{ $item->nama }}</a>
@@ -141,7 +143,8 @@
                                                     </div>
                                                 @elseif ($loop->index == 2)
                                                     <div class="card card_small_with_image grid-item">
-                                                        <img class="card-img-top" src="{{ $imageSrc }}">
+                                                        <img class="card-img-top" src="{{ $imageSrc }}"
+                                                            style="filter: brightness(75%)">
                                                         <div class="card-body">
                                                             <div class="card-title card-title-small">
                                                                 <a href="{{ $routeView }}">{{ $item->nama }}</a>
@@ -154,7 +157,8 @@
                                                     </div>
                                                 @elseif ($loop->index == 3)
                                                     <div class="card card_small_with_image grid-item">
-                                                        <img class="card-img-top"src="{{ $imageSrc }}">
+                                                        <img class="card-img-top"src="{{ $imageSrc }}"
+                                                            style="filter: brightness(75%)">
                                                         <div class="card-body">
                                                             <div class="card-title card-title-small">
                                                                 <a href="{{ $routeView }}">{{ $item->nama }}</a>
