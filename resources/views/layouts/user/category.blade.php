@@ -18,6 +18,12 @@
         href="{{ asset('avision/plugins/jquery.mb.YTPlayer-3.1.12/jquery.mb.YTPlayer.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('avision/styles/category.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('avision/styles/category_responsive.css') }}">
+    <style>
+        /* .strokeme {
+            color: black;
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+        } */
+    </style>
 </head>
 
 <body>
@@ -52,33 +58,47 @@
                                     <div class="section_title">Ketegori</div>
                                     <div class="section_tags ml-auto">
                                         <ul>
-                                            <li class="{{ request()->is('*Semua*') ? 'active' : '' }}"><a
-                                                    href="{{ route('kategori', 'Semua') }}">semua</a></li>
-                                            <li class="{{ request()->is('*CeritaRakyat*') ? 'active' : '' }}"><a
-                                                    href="{{ route('kategori', 'CeritaRakyat') }}">cerita rakyat</a>
+                                            <li class="{{ request()->is('*Semua*') ? 'active' : '' }}">
+                                                <a href="{{ route('kategori', 'Semua') }}">semua</a>
                                             </li>
-                                            <li class="{{ request()->is('*Sejarah*') ? 'active' : '' }}"><a
-                                                    href="{{ route('kategori', 'Sejarah') }}">sejarah</a></li>
-                                            <li class="{{ request()->is('*AlatMusik*') ? 'active' : '' }}"><a
-                                                    href="{{ route('kategori', 'AlatMusik') }}">alat musik</a></li>
-                                            <li class="{{ request()->is('*Senjata*') ? 'active' : '' }}"><a
-                                                    href="{{ route('kategori', 'Senjata') }}">senjata</a></li>
-                                            <li class="{{ request()->is('*Adat*') ? 'active' : '' }}"><a
-                                                    href="{{ route('kategori', 'Adat') }}">adat</a></li>
+                                            <li class="{{ request()->is('*CeritaRakyat*') ? 'active' : '' }}">
+                                                <a href="{{ route('kategori', 'CeritaRakyat') }}">cerita rakyat</a>
+                                            </li>
+                                            <li class="{{ request()->is('*Sejarah*') ? 'active' : '' }}">
+                                                <a href="{{ route('kategori', 'Sejarah') }}">sejarah</a>
+                                            </li>
+                                            <li class="{{ request()->is('*AlatMusik*') ? 'active' : '' }}">
+                                                <a href="{{ route('kategori', 'AlatMusik') }}">alat musik</a>
+                                            </li>
+                                            <li class="{{ request()->is('*Senjata*') ? 'active' : '' }}">
+                                                <a href="{{ route('kategori', 'Senjata') }}">senjata</a>
+                                            </li>
+                                            <li class="{{ request()->is('*Adat*') ? 'active' : '' }}">
+                                                <a href="{{ route('kategori', 'Adat') }}">adat</a>
+                                            </li>
                                         </ul>
                                     </div>
                                     <div class="section_panel_more">
                                         <ul>
                                             <li class="{{ request()->is('*Tradisi*') ? 'active' : '' }}">tradisi
                                                 <ul>
-                                                    <li><a href="{{ route('kategori', 'TradisiTabuko') }}">tradisi
-                                                            tabuko</a></li>
-                                                    <li><a href="{{ route('kategori', 'TradisiHudoq') }}">tradisi
-                                                            hudoq</a></li>
-                                                    <li><a href="{{ route('kategori', 'TradisiNugal') }}">tradisi
-                                                            nugal</a></li>
-                                                    <li><a href="{{ route('kategori', 'TradisiBelikong') }}">tradisi
-                                                            belikong</a></li>
+                                                    <li>
+                                                        <a href="{{ route('kategori', 'TradisiTabuko') }}">
+                                                            tradisi tabuko
+                                                        </a>
+                                                    </li>
+                                                    <li><a href="{{ route('kategori', 'TradisiHudoq') }}">
+                                                            tradisi hudoq
+                                                        </a>
+                                                    </li>
+                                                    <li><a href="{{ route('kategori', 'TradisiNugal') }}">
+                                                            tradisi nugal
+                                                        </a>
+                                                    </li>
+                                                    <li><a href="{{ route('kategori', 'TradisiBelikong') }}">
+                                                            tradisi belikong
+                                                        </a>
+                                                    </li>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -88,14 +108,16 @@
                                     <div class="grid clearfix">
                                         @foreach ($model as $items)
                                             @foreach ($items as $item)
+                                                @php
+                                                    $routeView = route('post.show', ['model' => class_basename($item), 'id' => $item->id]);
+                                                    $imageSrc = $item->gambar ? asset('storage/uploads/' . Str::of($item->kategori)->snake() . '/' . $item->gambar) : asset('avision/images/no-image.png');
+                                                @endphp
                                                 @if ($loop->index == 0)
                                                     <div class="card card_small_with_image grid-item">
-                                                        <img class="card-img-top"
-                                                            src="{{ asset('avision/images/post_15.jpg') }}"
-                                                            alt="">
+                                                        <img class="card-img-top" src="{{ $imageSrc }}">
                                                         <div class="card-body">
-                                                            <div class="card-title card-title-small"><a
-                                                                    href="post.html">{{ $item->nama }}</a>
+                                                            <div class="card-title card-title-small">
+                                                                <a href="{{ $routeView }}">{{ $item->nama }}</a>
                                                             </div>
                                                             <small class="post_meta">
                                                                 <a href="#">Admin</a>
@@ -106,11 +128,10 @@
                                                 @elseif ($loop->index == 1)
                                                     <div class="card card_default card_small_with_background grid-item">
                                                         <div class="card_background"
-                                                            style="background-image:url({{ asset('avision/images/post_21.jpg') }})">
-                                                        </div>
+                                                            style="background-image:url({{ $imageSrc }})"></div>
                                                         <div class="card-body">
-                                                            <div class="card-title card-title-small"><a
-                                                                    href="post.html">{{ $item->nama }}</a>
+                                                            <div class="card-title card-title-small">
+                                                                <a href="{{ $routeView }}">{{ $item->nama }}</a>
                                                             </div>
                                                             <small class="post_meta">
                                                                 <a href="#">Admin</a>
@@ -120,12 +141,10 @@
                                                     </div>
                                                 @elseif ($loop->index == 2)
                                                     <div class="card card_small_with_image grid-item">
-                                                        <img class="card-img-top"
-                                                            src="{{ asset('avision/images/post_15.jpg') }}"
-                                                            alt="">
+                                                        <img class="card-img-top" src="{{ $imageSrc }}">
                                                         <div class="card-body">
-                                                            <div class="card-title card-title-small"><a
-                                                                    href="post.html">{{ $item->nama }}</a>
+                                                            <div class="card-title card-title-small">
+                                                                <a href="{{ $routeView }}">{{ $item->nama }}</a>
                                                             </div>
                                                             <small class="post_meta">
                                                                 <a href="#">Admin</a>
@@ -135,12 +154,10 @@
                                                     </div>
                                                 @elseif ($loop->index == 3)
                                                     <div class="card card_small_with_image grid-item">
-                                                        <img class="card-img-top"
-                                                            src="{{ asset('avision/images/post_13.jpg') }}"
-                                                            alt="https://unsplash.com/@jakobowens1">
+                                                        <img class="card-img-top"src="{{ $imageSrc }}">
                                                         <div class="card-body">
-                                                            <div class="card-title card-title-small"><a
-                                                                    href="post.html">{{ $item->nama }}</a>
+                                                            <div class="card-title card-title-small">
+                                                                <a href="{{ $routeView }}">{{ $item->nama }}</a>
                                                             </div>
                                                             <small class="post_meta">
                                                                 <a href="#">Admin</a>

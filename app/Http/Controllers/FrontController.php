@@ -25,7 +25,7 @@ class FrontController extends Controller
                 $kategori = $this->setTitle($kategori);
                 break;
             default:
-                $model = app("App\\Models\\" . $kategori)->all()->chunk(4);
+                $model = app("App\\Models\\" . $kategori)->orderBy('updated_at', 'desc')->get()->chunk(4);
                 $kategori = $this->setTitle($kategori);
                 break;
         }
@@ -42,8 +42,8 @@ class FrontController extends Controller
     private function getAdatData()
     {
         return collect([])
-            ->concat(app("App\\Models\\AdatLahiran")->all())
-            ->concat(app("App\\Models\\AdatPernikahan")->all());
+            ->concat(app("App\\Models\\AdatLahiran")->orderBy('updated_at', 'desc')->get())
+            ->concat(app("App\\Models\\AdatPernikahan")->orderBy('updated_at', 'desc')->get());
     }
 
     private function setTitle($string)

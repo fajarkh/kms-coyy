@@ -17,7 +17,6 @@ class CeritaRakyatSeeder extends Seeder
                     'nama' => $faker->name,
                     'deskripsi' => $faker->text,
                     'budaya_id' => 1,
-                    'gambar' => 'gambar1.png'
                 ]
             );
         }
