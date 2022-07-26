@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Spatie\Activitylog\Traits\LogsActivity;
 class Sejarah extends Model
 {
+    use LogsActivity;
+    
     protected $table = 'sejarah';
-
     protected $fillable = [
         'nama',
         'deskripsi',
@@ -15,6 +17,11 @@ class Sejarah extends Model
         'gambar',
     ];
     protected $appends = ['ringkasan'];
+
+    //log activty config
+    protected static $logAttributes = ['nama', 'gambar'];
+    protected static $recordEvents = ['created', 'updated'];
+    protected static $logName = 'sejarah';
 
     public function getRingkasanAttribute()
     {
