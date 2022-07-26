@@ -4,16 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Spatie\Activitylog\Traits\LogsActivity;
+
 class CeritaRakyat extends Model
 {
-    /**
-     * @var string
-     */
-    protected $table = 'cerita_rakyat';
+    use LogsActivity;
 
-    /**
-     * @var array
-     */
+    protected $table = 'cerita_rakyat';
     protected $fillable = [
         'nama',
         'deskripsi',
@@ -21,6 +18,11 @@ class CeritaRakyat extends Model
         'gambar',
     ];
     protected $appends = ['ringkasan'];
+
+    //log activty config
+    protected static $logAttributes = ['nama', 'gambar'];
+    protected static $recordEvents = ['created', 'updated'];
+    protected static $logName = 'cerita_rakyat';
 
     public function budaya()
     {

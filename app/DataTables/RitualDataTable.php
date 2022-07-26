@@ -54,7 +54,9 @@ class RitualDataTable extends DataTable
                 ->orderable(false)
                 ->searchable(false),
             Column::make('nama'),
-            Column::make('ringkasan')->title('Deskripsi'),
+            Column::make('ringkasan')->title('Deskripsi')
+                ->orderable(false)
+                ->searchable(false),
             Column::make('jenis'),
             Column::computed('action')
                 ->title('Aksi')
