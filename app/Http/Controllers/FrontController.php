@@ -11,6 +11,8 @@ class FrontController extends Controller
     {
         $this->view = 'post';
         $this->shareView(['type' => 'front']);
+        // $data = \App\Models\ActivityLog::latestCreated()->limit(4)->get();
+        // dd($data[0]->properties->attributes->gambar);
     }
 
     public function kategori($kategori)

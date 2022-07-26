@@ -8,6 +8,7 @@ use Spatie\Activitylog\Traits\LogsActivity;
 class ActivityLog extends Model
 {
     use LogsActivity;
+
     protected $table = 'activity_log';
 
     public function ceritaRakyat()
@@ -20,10 +21,6 @@ class ActivityLog extends Model
         return $this->morphTo(Sejarah::class, 'subject_type', 'subject_id');
     }
 
-    // public function getDecodedPropertiesAttribute()
-    // {
-    //     return json_decode($this->properties, true);
-    // }
     public function getPropertiesAttribute($value)
     {
         return json_decode($value, false);
@@ -31,6 +28,9 @@ class ActivityLog extends Model
 
     public function scopeLatestCreated($query)
     {
-        return $query->where('description', 'created')->has('ceritaRakyat')->has('sejarah');
+        return $query->where('description', 'created')
+            ->has('ceritaRakyat')
+            ->has('sejarah')
+            ->orderBy('updated_at', 'desc');
     }
 }

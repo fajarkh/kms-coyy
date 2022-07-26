@@ -42,13 +42,18 @@
                         <!-- Top Stories Slider Item -->
                         <div class="owl-item">
                             @foreach (\App\Models\ActivityLog::latestCreated()->limit(4)->get() as $item)
+                                @php
+                                    $model = substr(strrchr($item->subject_type, '\\'), 1);
+                                    $properties = $item->properties->attributes;
+                                    $imageSrc = $properties->gambar ? asset('storage/uploads/' . Str::of($model)->snake() . '/' . $properties->gambar) : asset('avision/images/no-image.png');
+                                @endphp
                                 <div class="side_post">
-                                    <a href="#">
+                                    <a href="{{ route('post.show', ['model' => $model, 'id' => $item->subject_id]) }}">
                                         <div
                                             class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
                                             <div class="side_post_image">
                                                 <div>
-                                                    <img src="{{ asset('avision/images/top_1.jpg') }}">
+                                                    <img src="{{ $imageSrc }}">
                                                 </div>
                                             </div>
                                             <div class="side_post_content">
@@ -56,7 +61,8 @@
                                                     {{ $item->properties->attributes->nama }}
                                                 </div>
                                                 <small class="post_meta">
-                                                    Admin<span></span>
+                                                    {{ preg_replace('/(?<!\ )[A-Z]/', ' $0', $model) }}
+                                                    <span>{{ Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM Y, HH:s') }}</span>
                                                 </small>
                                             </div>
                                         </div>
