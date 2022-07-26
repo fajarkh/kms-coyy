@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Budaya;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -17,11 +18,11 @@ class FrontController extends Controller
         $model = [];
         switch ($kategori) {
             case 'Semua':
-                $model = [];
+                $model =  $this->getData('Semua')->chunk(4);
                 $kategori = '';
                 break;
             case 'Adat':
-                $model = $this->getAdatData()->chunk(4);
+                $model = $this->getData('Adat')->chunk(4);
                 $kategori = $this->setTitle($kategori);
                 break;
             default:
@@ -39,11 +40,29 @@ class FrontController extends Controller
         return view($this->view . '.show', compact('post'));
     }
 
-    private function getAdatData()
+    private function getData($type)
     {
-        return collect([])
-            ->concat(app("App\\Models\\AdatLahiran")->orderBy('updated_at', 'desc')->get())
-            ->concat(app("App\\Models\\AdatPernikahan")->orderBy('updated_at', 'desc')->get());
+        if ($type == 'Adat') {
+            return collect([])
+                ->concat(app("App\\Models\\AdatLahiran")->orderBy('updated_at', 'desc')->get())
+                ->concat(app("App\\Models\\AdatPernikahan")->orderBy('updated_at', 'desc')->get());
+        }
+        if ($type == 'Semua') {
+            $model = Budaya::with([
+                'alatmusik',
+                'rumahAdat',
+                'adatLahiran',
+                'adatPernikahan',
+                'senjata',
+                'ceritaRakyat',
+                'sejarah',
+                'tradisiTabuko',
+                'tradisiNugal',
+                'tradisiHudoq',
+                'tradisiBelikong'
+            ])->first();
+            return collect($model->getRelations())->flatten(1);
+        }
     }
 
     private function setTitle($string)

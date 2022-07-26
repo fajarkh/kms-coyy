@@ -32,9 +32,9 @@ class Budaya extends Model
         return $this->hasMany('App\Models\AdatLahiran');
     }
     
-    public function adatPerkawinan()
+    public function adatPernikahan()
     {
-        return $this->hasMany('App\Models\AdatPerkawinan');
+        return $this->hasMany('App\Models\AdatPernikahan');
     }
 
     public function pakaian()
