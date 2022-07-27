@@ -4,8 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Spatie\Activitylog\Traits\LogsActivity;
+
 class Senjata extends Model
 {
+    use LogsActivity;
     protected $table = 'senjata';
     protected $fillable = [
         'nama',
@@ -14,6 +17,11 @@ class Senjata extends Model
         'id_budaya',
     ];
     protected $appends = ['ringkasan'];
+
+    //log activty config
+    protected static $logAttributes = ['nama', 'gambar'];
+    protected static $recordEvents = ['created', 'updated'];
+    protected static $logName = 'senjata';
 
     public function getRingkasanAttribute()
     {

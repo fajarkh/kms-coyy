@@ -4,9 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class TradisiHudoq extends Model
 {
+    use LogsActivity;
     protected $table = 'tradisi_hudoq';
     protected $fillable = [
         'nama',
@@ -15,6 +17,11 @@ class TradisiHudoq extends Model
         'id_budaya',
     ];
     protected $appends = ['ringkasan'];
+
+    //log activty config
+    protected static $logAttributes = ['nama', 'gambar'];
+    protected static $recordEvents = ['created', 'updated'];
+    protected static $logName = 'tradisi_hudoq';
 
     public function getRingkasanAttribute()
     {

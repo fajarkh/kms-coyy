@@ -4,9 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class AdatLahiran extends Model
 {
+    use LogsActivity;
+
     protected $table = 'adat_lahiran';
     protected $fillable = [
         'nama',
@@ -16,11 +19,16 @@ class AdatLahiran extends Model
     ];
     protected $appends = ['ringkasan'];
 
+    //log activty config
+    protected static $logAttributes = ['nama', 'gambar'];
+    protected static $recordEvents = ['created', 'updated'];
+    protected static $logName = 'adat_lahiran';
+
     public function getRingkasanAttribute()
     {
         return Str::limit(strip_tags($this->deskripsi), 100, '...');
     }
-    
+
     public function getKategoriAttribute()
     {
         return preg_replace('/(?<!\ )[A-Z]/', ' $0', class_basename($this));
@@ -30,5 +38,4 @@ class AdatLahiran extends Model
     {
         return $this->belongsTo('App\Models\Budaya');
     }
-    
 }
