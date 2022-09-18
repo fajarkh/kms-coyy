@@ -35,7 +35,7 @@
                         @enderror
                     </div>
 
-                    <button type="submit" class="btn btn-md btn-primary">SIMPAN</button>
+                    <button type="submit" id="btn-submit" class="btn btn-md btn-primary">SIMPAN</button>
                     <button type="reset" class="btn btn-md btn-warning">RESET</button>
                 </form>
             </div>
@@ -49,7 +49,8 @@
     <script>
         let editor;
         DecoupledDocumentEditor
-            .create(document.querySelector('#deskripsi')).then(editor => {
+            .create(document.querySelector('#deskripsi')).then(newEditor => {
+                editor = newEditor;
                 const toolbarContainer = document.querySelector('#toolbar-container');
                 toolbarContainer.appendChild(editor.ui.view.toolbar.element);
             }).catch(error => {

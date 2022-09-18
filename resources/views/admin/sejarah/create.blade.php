@@ -25,9 +25,7 @@
                     <div class="form-group">
                         <label class="font-weight-bold">Deskripsi</label>
                         <div id="toolbar-container"></div>
-                        <div id="deskripsi">
-                            {{ old('deskripsi') }}
-                        </div>
+                        <div id="deskripsi">{{ old('deskripsi') }}</div>
                         {{ Form::hidden('deskripsi') }}
                         @error('deskripsi')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
@@ -48,7 +46,8 @@
     <script>
         let editor;
         DecoupledDocumentEditor
-            .create(document.querySelector('#deskripsi')).then(editor => {
+            .create(document.querySelector('#deskripsi')).then(newEditor => {
+                editor = newEditor;
                 const toolbarContainer = document.querySelector('#toolbar-container');
                 toolbarContainer.appendChild(editor.ui.view.toolbar.element);
             }).catch(error => {
