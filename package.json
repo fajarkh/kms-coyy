@@ -22,6 +22,7 @@
     },
     "dependencies": {
         "-": "0.0.1",
+        "@ckeditor/ckeditor5-alignment": "^35.1.0",
         "datatables.net-bs4": "^1.11.5",
         "datatables.net-buttons-bs4": "^2.2.2",
         "g": "^2.0.1",
