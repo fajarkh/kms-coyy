@@ -91,7 +91,7 @@
 
         <!-- Newest Videos -->
 
-        <div class="sidebar_section newest_videos">
+        {{-- <div class="sidebar_section newest_videos">
             <div class="sidebar_title_container">
                 <div class="sidebar_title">Video Terbaru</div>
                 <div class="sidebar_slider_nav">
@@ -208,7 +208,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <!-- Advertising 2 -->
         {{-- <div class="sidebar_section">
@@ -224,7 +224,7 @@
 
         <!-- Future Events -->
 
-        <div class="sidebar_section future_events">
+        {{-- <div class="sidebar_section future_events">
             <div class="sidebar_title_container">
                 <div class="sidebar_title">Kegiatan</div>
                 <div class="sidebar_slider_nav">
@@ -343,10 +343,10 @@
                                 </a>
                             </div>
 
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
