@@ -24,8 +24,6 @@
                     </div>
                     <div class="form-group">
                         <label class="font-weight-bold">Deskripsi</label>
-                        {{-- <textarea class="form-control @error('deskripsi') is-invalid @enderror" name="deskripsi" id="deskripsi" rows="5"
-                            placeholder="Masukkan Deskripsi">{{ old('deskripsi') }}</textarea> --}}
                         <div id="toolbar-container"></div>
                         <div id="deskripsi">
                             {{ old('deskripsi') }}

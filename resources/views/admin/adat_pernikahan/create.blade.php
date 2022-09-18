@@ -24,8 +24,9 @@
                     </div>
                     <div class="form-group">
                         <label class="font-weight-bold">Deskripsi</label>
-                        <textarea class="form-control @error('deskripsi') is-invalid @enderror" name="deskripsi" rows="5"
-                            placeholder="Masukkan Deskripsi">{{ old('deskripsi') }}</textarea>
+                        <div id="toolbar-container"></div>
+                        <div id="deskripsi"> {{ old('deskripsi') }} </div>
+                        {{ Form::hidden('deskripsi') }}
                         @error('deskripsi')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                         @enderror
@@ -41,8 +42,21 @@
 
 @push('req-scripts')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
+    <script src="{{ asset('lte/plugins/ckeditor/build/ckeditor.js') }}"></script>
     <script>
-        CKEDITOR.replace('deskripsi');
+        let editor;
+        DecoupledDocumentEditor
+            .create(document.querySelector('#deskripsi')).then(editor => {
+                const toolbarContainer = document.querySelector('#toolbar-container');
+                toolbarContainer.appendChild(editor.ui.view.toolbar.element);
+            }).catch(error => {
+                console.error(error);
+            });
+
+        $(document).on("click", "#btn-submit", function(e) {
+            e.preventDefault();
+            $('[name="deskripsi"]').val(editor.getData());
+            $(this).closest('form').submit();
+        });
     </script>
 @endpush
