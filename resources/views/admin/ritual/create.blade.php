@@ -32,7 +32,7 @@
                         @enderror
                     </div>
 
-                    <button type="submit" id="btn-submit" class="btn btn-md btn-primary">SIMPAN</button>
+                    <button type="submit"  class="btn btn-md btn-primary">SIMPAN</button>
                     <button type="reset" class="btn btn-md btn-warning">RESET</button>
                 </form>
             </div>
@@ -58,7 +58,7 @@
                 console.error(error);
             });
 
-        $(document).on("click", "#btn-submit", function(e) {
+        $(document).on("click", ":submit", function(e) {
             e.preventDefault();
             $('[name="deskripsi"]').val(editor.getData());
             $(this).closest('form').submit();
