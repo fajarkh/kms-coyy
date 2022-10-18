@@ -38,8 +38,7 @@
     </div>
 @endsection
 
-@push('req-scripts')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+@push('req-scripts') 
     <script src="{{ asset('lte/plugins/ckeditor/build/ckeditor.js') }}"></script>
     <script>
         let editor;

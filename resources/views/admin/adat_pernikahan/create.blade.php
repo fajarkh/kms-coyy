@@ -5,7 +5,7 @@
     <div class="col-md-12">
         <div class="card border-0 shadow rounded">
             <div class="card-body">
-                <form action="{{ route($route.'.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route($route . '.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label class="font-weight-bold">Nama</label>
@@ -32,7 +32,7 @@
                         @enderror
                     </div>
 
-                    <button type="submit"  class="btn btn-md btn-primary">SIMPAN</button>
+                    <button type="submit" class="btn btn-md btn-primary">SIMPAN</button>
                     <button type="reset" class="btn btn-md btn-warning">RESET</button>
                 </form>
             </div>
@@ -41,7 +41,6 @@
 @endsection
 
 @push('req-scripts')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{{ asset('lte/plugins/ckeditor/build/ckeditor.js') }}"></script>
     <script src="{{ asset('js/custom-image-upload.js') }}"></script>
     <script>

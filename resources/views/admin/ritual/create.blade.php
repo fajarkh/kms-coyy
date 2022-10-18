@@ -17,7 +17,10 @@
                     </div>
                     <div class="form-group">
                         {!! Form::label('jenis', 'Jenis *') !!}
-                        {!! Form::select('jenis', App\Models\Ritual::dataRitual(), null, ['class' => 'custom-select', 'placeholder' => 'Pilih Jenis']) !!}
+                        {!! Form::select('jenis', App\Models\Ritual::dataRitual(), null, [
+                            'class' => 'custom-select',
+                            'placeholder' => 'Pilih Jenis',
+                        ]) !!}
                         @error('jenis')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                         @enderror
@@ -32,7 +35,7 @@
                         @enderror
                     </div>
 
-                    <button type="submit"  class="btn btn-md btn-primary">SIMPAN</button>
+                    <button type="submit" class="btn btn-md btn-primary">SIMPAN</button>
                     <button type="reset" class="btn btn-md btn-warning">RESET</button>
                 </form>
             </div>
@@ -41,7 +44,6 @@
 @endsection
 
 @push('req-scripts')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{{ asset('lte/plugins/ckeditor/build/ckeditor.js') }}"></script>
     <script src="{{ asset('js/custom-image-upload.js') }}"></script>
     <script>
