@@ -41,7 +41,6 @@
 @endsection
 
 @push('req-scripts')
-
     <script src="{{ asset('lte/plugins/ckeditor/build/ckeditor.js') }}"></script>
     <script src="{{ asset('js/custom-image-upload.js') }}"></script>
     <script>

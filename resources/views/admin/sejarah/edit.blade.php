@@ -38,12 +38,16 @@
     </div>
 @endsection
 
-@push('req-scripts') 
+@push('req-scripts')
     <script src="{{ asset('lte/plugins/ckeditor/build/ckeditor.js') }}"></script>
+    <script src="{{ asset('js/custom-image-upload.js') }}"></script>
     <script>
         let editor;
+        let imageUploadUrl = "{{ route('upload', ['_token' => csrf_token()]) }}";
         DecoupledDocumentEditor
-            .create(document.querySelector('#deskripsi')).then(newEditor => {
+            .create(document.querySelector('#deskripsi'), {
+                extraPlugins: [CustomUploadAdapterPlugin]
+            }).then(newEditor => {
                 editor = newEditor;
                 const toolbarContainer = document.querySelector('#toolbar-container');
                 toolbarContainer.appendChild(newEditor.ui.view.toolbar.element);
