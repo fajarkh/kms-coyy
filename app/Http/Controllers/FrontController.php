@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Budaya;
 use Illuminate\Http\Request;
+use Spatie\Searchable\Search;
 
 class FrontController extends Controller
 {
@@ -40,6 +41,27 @@ class FrontController extends Controller
         $shareLink = \Share::page(url()->full(), $post->nama)->facebook()->twitter()->whatsapp()->telegram()->getRawLinks();
 
         return view($this->view . '.show', compact('post', 'shareLink'));
+    }
+
+    public function search(Request $request)
+    {
+        $searchterm =   $request->keywords;
+        $searchOn = ['nama', 'deskripsi'];
+        $searchResults = (new Search())
+            ->registerModel(\App\Models\Sejarah::class, $searchOn)
+            ->registerModel(\App\Models\AdatLahiran::class, $searchOn)
+            ->registerModel(\App\Models\AlatMusik::class, $searchOn)
+            ->registerModel(\App\Models\RumahAdat::class, $searchOn)
+            ->registerModel(\App\Models\CeritaRakyat::class, $searchOn)
+            ->registerModel(\App\Models\AdatLahiran::class, $searchOn)
+            ->registerModel(\App\Models\AdatPernikahan::class, $searchOn)
+            ->registerModel(\App\Models\Senjata::class, $searchOn)
+            ->registerModel(\App\Models\TradisiBelikong::class, $searchOn)
+            ->registerModel(\App\Models\TradisiHudoq::class, $searchOn)
+            ->registerModel(\App\Models\TradisiNugal::class, $searchOn)
+            ->registerModel(\App\Models\TradisiTabuko::class, $searchOn)
+            ->perform($searchterm);
+        return view('layouts.user.search', compact('searchResults', 'searchterm'));
     }
 
     private function getData($type)

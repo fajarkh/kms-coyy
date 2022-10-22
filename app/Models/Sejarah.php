@@ -5,10 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Spatie\Activitylog\Traits\LogsActivity;
-class Sejarah extends Model
+use Spatie\Searchable\Searchable;
+use Spatie\Searchable\SearchResult;
+
+class Sejarah extends Model implements Searchable
 {
     use LogsActivity;
-    
+
     protected $table = 'sejarah';
     protected $fillable = [
         'nama',
@@ -22,6 +25,12 @@ class Sejarah extends Model
     protected static $logAttributes = ['nama', 'gambar'];
     protected static $recordEvents = ['created', 'updated'];
     protected static $logName = 'sejarah';
+
+    public function getSearchResult(): SearchResult
+    {
+        $url = route('post.show', ['model' => class_basename($this), 'id' => $this->id]);
+        return new SearchResult($this, $this->nama, $url);
+    }
 
     public function getRingkasanAttribute()
     {

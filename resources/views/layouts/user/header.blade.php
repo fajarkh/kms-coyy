@@ -12,13 +12,13 @@
                             <li class="menu_mm"><a href="{{ route('login') }}">Login</a></li>
                         </ul>
                     </nav>
-                    {{-- <div class="search_container ml-auto">
-                        <form action="#">
-                            <input type="search" class="header_search_input" required="required" placeholder="Cari...">
+                    <div class="search_container ml-auto">
+                        <form method="get" action="{{ route('search.result') }}">
+                            <input type="search" class="header_search_input" name="keywords" required="required" placeholder="Cari...">
                             <img class="header_search_icon" src="{{ asset('avision/images/search.png') }}"
                                 alt="">
                         </form>
-                    </div> --}}
+                    </div>
                     <div class="hamburger ml-auto menu_mm">
                         <i class="fa fa-bars trans_200 menu_mm" aria-hidden="true"></i>
                     </div>

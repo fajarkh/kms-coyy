@@ -17,6 +17,7 @@ Route::get('/', function () {
 Route::get('/kategori/{kategori}', 'FrontController@kategori')->name('kategori');
 Route::get('/post/{model}/{id}', 'FrontController@show')->name('post.show');
 Route::post('ckeditor/image_upload', 'CkeditorController@upload')->name('upload');
+Route::get('search-results', 'FrontController@search')->name('search.result');
 
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::get('/dashboard', 'HomeController@index');

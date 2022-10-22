@@ -19,10 +19,6 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('avision/styles/category.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('avision/styles/category_responsive.css') }}">
     <style>
-        /* .strokeme {
-            color: black;
-            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
-        } */
     </style>
 </head>
 
