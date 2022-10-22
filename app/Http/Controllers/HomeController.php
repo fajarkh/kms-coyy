@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,6 +15,7 @@ class HomeController extends Controller
     public function index()
     {
         $countPengetahuan = 0;
+        $countAdmin = User::where('level', 1)->get()->count();
         $models = [
             'CeritaRakyat', 'Sejarah', 'AlatMusik', 'RumahAdat', 'AdatLahiran', 'AdatPernikahan', 'Senjata', 'TradisiTabuko',
             'TradisiNugal',
@@ -23,6 +25,6 @@ class HomeController extends Controller
         foreach ($models as $model) {
             $countPengetahuan += app("App\\Models\\" . $model)->count();
         }
-        return view('dashboard', compact('countPengetahuan'));
+        return view('dashboard', compact('countPengetahuan', 'countAdmin'));
     }
 }
