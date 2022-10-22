@@ -3,7 +3,6 @@
     Dashboard
 @endsection
 @push('req-css')
-
 @endpush
 @section('content')
     <div class="row justify-content-center">
@@ -13,8 +12,14 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3 col-sm-6 col-12">
-                    <x-info-box bg="info" icon="fa-envelope" title="coba" subtitle="100" />
+                <div class="col-lg-4 col-6">
+                    <x-small-box bg="info" icon="fas fa-book" item="{{ $countPengetahuan }}" title="Pengetahuan" />
+                </div>
+                <div class="col-lg-4 col-6">
+                    <x-small-box bg="info" icon="fas fa-envelope" item="0" title="slot 2" />
+                </div>
+                <div class="col-lg-4 col-6">
+                    <x-small-box bg="info" icon="fas fa-envelope" item="0" title="slot 3" />
                 </div>
             </div>
         </div>
@@ -22,7 +27,5 @@
 @endsection
 
 @push('req-scripts')
-    <script>
-
-    </script>
+    <script></script>
 @endpush

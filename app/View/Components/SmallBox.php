@@ -13,7 +13,7 @@ class SmallBox extends Component
     public $title;
     public $icon;
     public $footer;
-    public function __construct($bg, $loading, $item, $unit, $title, $icon, $footer = false)
+    public function __construct($bg, $loading = false, $item, $unit = '', $title, $icon, $footer = false)
     {
         $this->bg = $bg;
         $this->icon = $icon;

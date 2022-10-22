@@ -13,6 +13,16 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('dashboard');
+        $countPengetahuan = 0;
+        $models = [
+            'CeritaRakyat', 'Sejarah', 'AlatMusik', 'RumahAdat', 'AdatLahiran', 'AdatPernikahan', 'Senjata', 'TradisiTabuko',
+            'TradisiNugal',
+            'TradisiHudoq',
+            'TradisiBelikong',
+        ];
+        foreach ($models as $model) {
+            $countPengetahuan += app("App\\Models\\" . $model)->count();
+        }
+        return view('dashboard', compact('countPengetahuan'));
     }
 }
