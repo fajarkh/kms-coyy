@@ -61,12 +61,23 @@
                                 <div class="post_share ml-sm-auto">
                                     <span>Bagikan</span>
                                     <ul class="post_share_list">
-                                        <li class="post_share_item"><a href="#"><i class="fa fa-facebook"
-                                                    aria-hidden="true"></i></a></li>
-                                        <li class="post_share_item"><a href="#"><i class="fa fa-twitter"
-                                                    aria-hidden="true"></i></a></li>
-                                        <li class="post_share_item"><a href="#"><i class="fa fa-google"
-                                                    aria-hidden="true"></i></a></li>
+                                        <li class="post_share_item">
+                                            <a href="{{ $shareLink['facebook'] }}">
+                                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li class="post_share_item"><a href="{{ $shareLink['twitter'] }}">
+                                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li class="post_share_item"><a href="{{ $shareLink['whatsapp'] }}">
+                                                <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li class="post_share_item"><a href="{{ $shareLink['telegram'] }}">
+                                                <i class="fa fa-telegram" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -106,12 +117,23 @@
                                 <div class="post_share ml-sm-auto">
                                     <span>Bagikan</span>
                                     <ul class="post_share_list">
-                                        <li class="post_share_item"><a href="#"><i class="fa fa-facebook"
-                                                    aria-hidden="true"></i></a></li>
-                                        <li class="post_share_item"><a href="#"><i class="fa fa-twitter"
-                                                    aria-hidden="true"></i></a></li>
-                                        <li class="post_share_item"><a href="#"><i class="fa fa-google"
-                                                    aria-hidden="true"></i></a></li>
+                                        <li class="post_share_item">
+                                            <a href="{{ $shareLink['facebook'] }}">
+                                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li class="post_share_item"><a href="{{ $shareLink['twitter'] }}">
+                                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li class="post_share_item"><a href="{{ $shareLink['whatsapp'] }}">
+                                                <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li class="post_share_item"><a href="{{ $shareLink['telegram'] }}">
+                                            <i class="fa fa-telegram" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
                                     </ul>
                                 </div>
                             </div>

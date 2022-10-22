@@ -11,8 +11,6 @@ class FrontController extends Controller
     {
         $this->view = 'post';
         $this->shareView(['type' => 'front']);
-        // $data = \App\Models\ActivityLog::latestCreated()->limit(4)->get();
-        // dd($data[0]->properties->attributes->gambar);
     }
 
     public function kategori($kategori)
@@ -39,7 +37,9 @@ class FrontController extends Controller
     {
         $model = app("App\\Models\\" . $model);
         $post = $model->find($id);
-        return view($this->view . '.show', compact('post'));
+        $shareLink = \Share::page(url()->full(), $post->nama)->facebook()->twitter()->whatsapp()->telegram()->getRawLinks();
+
+        return view($this->view . '.show', compact('post', 'shareLink'));
     }
 
     private function getData($type)
