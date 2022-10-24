@@ -60,7 +60,7 @@
                                                 <small class="post_meta">
                                                     {{ preg_replace('/(?<!\ )[A-Z]/', ' $0', $model) }}
                                                     <br><i class="fa fa-clock-o"></i>
-                                                    {{ Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM Y, HH:s') }}
+                                                    {{ Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM Y') }}
                                                 </small>
                                             </div>
                                         </div>

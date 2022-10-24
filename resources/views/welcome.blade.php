@@ -34,11 +34,8 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="home_slider_content">
-                                            <div class="home_slider_item_category trans_200"><a href="#"
-                                                    class="trans_200">sport</a></div>
                                             <div class="home_slider_item_title">
-                                                <a href="#">How Did van Gogh’s Turbulent Mind Depict One of the
-                                                    Most Complex Concepts in Physics?</a>
+                                                <a href="#">SISTEM MANAJEMEN PENGETAHUAN TRADISI SUKU BUDAYA DAYAK BAHAU </a>
                                             </div>
                                             <div class="home_slider_item_link">
                                                 <a href="#" class="trans_200">Baca Selengkapnya
