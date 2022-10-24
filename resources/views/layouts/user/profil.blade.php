@@ -28,7 +28,7 @@
         @include('layouts.user.header')
         <div class="home">
             <div class="home_background parallax-window" data-parallax="scroll"
-                data-image-src="{{ asset('avision/images/category.jpg') }}" data-speed="0.8"></div>
+                data-image-src="{{ asset('avision/images/profil.jpg') }}" data-speed="0.8"></div>
         </div>
         <div class="page_content">
             <div class="container">
