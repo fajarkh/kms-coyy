@@ -86,7 +86,7 @@
 
                             <div class="post_body">
                                 <figure>
-                                    @php $imageSrc = $post->gambar ? asset('storage/uploads/' . Str::of($post->kategori)->snake() . '/' . $post->gambar) : asset('avision/images/no-image.png'); @endphp
+                                    @php $imageSrc = $post->gambar ? asset("storage/uploads/{$post->getTable()}/$post->gambar") : asset('avision/images/no-image.png'); @endphp
                                     <img src="{{ $imageSrc }}">
                                     <figcaption>{{ $post->nama }}</figcaption>
                                 </figure>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\DataTables\TradisiDataTable;
 use App\Http\Requests\TradisiRequest;
 use App\Traits\UploadFileTrait;
+use Illuminate\Support\Str;
 
 class TradisiController extends Controller
 {
@@ -39,7 +40,7 @@ class TradisiController extends Controller
     {
         $item = $this->model->create([
             'nama'     => $request->nama,
-            'gambar'     => $this->upload('tradisi', $request->file('gambar')),
+            'gambar'     => $this->upload($this->model->getTable(), $request->file('gambar')),
             'deskripsi'   => $request->deskripsi
         ]);
         return $this->redirectWith($item->wasRecentlyCreated ? 'insert' : 'error');
@@ -53,7 +54,7 @@ class TradisiController extends Controller
             'deskripsi'   => $request->deskripsi
         ];
         if ($request->file('gambar') != "") {
-            $dataUpdate['gambar'] = $this->upload('tradisi', $request->file('gambar'), $item->gambar);
+            $dataUpdate['gambar'] = $this->upload($this->model->getTable(), $request->file('gambar'), $item->gambar);
         }
         return $this->redirectWith($item->update($dataUpdate)  ? 'update' : 'error');
     }
@@ -61,7 +62,7 @@ class TradisiController extends Controller
     public function destroy($id)
     {
         $item = $this->model->findOrFail($id);
-        $this->deleteFile('tradisi', $item->gambar);
+        $this->deleteFile($this->model->getTable(), $item->gambar);
         return $this->redirectWith($item->delete() ? 'delete' : 'error');
     }
 }

@@ -57,19 +57,4 @@ class ActivityLog extends Model
         return json_decode($value, false);
     }
 
-    public function scopeLatestCreated($query)
-    {
-        return $query->where('description', 'created')
-            ->has('ceritaRakyat')
-            ->has('sejarah')
-            ->has('adatLahiran')
-            ->has('adatPernikahan')
-            ->has('alatMusik')
-            ->has('senjata')
-            ->has('tradisiBelikong')
-            ->has('tradisiHudoq')
-            ->has('tradisiNugal')
-            ->has('tradisiTabuko')
-            ->orderBy('updated_at', 'desc');
-    }
 }

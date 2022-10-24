@@ -41,28 +41,26 @@
 
                         <!-- Top Stories Slider Item -->
                         <div class="owl-item">
-                            @foreach (\App\Models\ActivityLog::latestCreated()->limit(4)->get() as $item)
+                            @foreach (\App\Models\Budaya::first()->getLatestPengetahuan(4) as $item)
                                 @php
-                                    $model = substr(strrchr($item->subject_type, '\\'), 1);
-                                    $properties = $item->properties->attributes;
-                                    $imageSrc = $properties->gambar ? asset('storage/uploads/' . Str::of($model)->snake() . '/' . $properties->gambar) : asset('avision/images/no-image.png');
+                                    $model = class_basename($item);
+                                    $imageSrc = $item->gambar ? asset('storage/uploads/' . Str::of($model)->snake() . '/' . $item->gambar) : asset('avision/images/no-image.png');
                                 @endphp
                                 <div class="side_post">
-                                    <a href="{{ route('post.show', ['model' => $model, 'id' => $item->subject_id]) }}">
+                                    <a href="{{ route('post.show', ['model' => $model, 'id' => $item->id]) }}">
                                         <div
                                             class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
                                             <div class="side_post_image">
-                                                <div>
-                                                    <img src="{{ $imageSrc }}">
-                                                </div>
+                                                <div><img src="{{ $imageSrc }}"></div>
                                             </div>
                                             <div class="side_post_content">
                                                 <div class="side_post_title">
-                                                    {{ $item->properties->attributes->nama }}
+                                                    {{ $item->nama }}
                                                 </div>
                                                 <small class="post_meta">
                                                     {{ preg_replace('/(?<!\ )[A-Z]/', ' $0', $model) }}
-                                                    <span>{{ Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM Y, HH:s') }}</span>
+                                                    <br><i class="fa fa-clock-o"></i>
+                                                    {{ Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM Y, HH:s') }}
                                                 </small>
                                             </div>
                                         </div>
@@ -344,9 +342,5 @@
                             </div>
 
                         </div> --}}
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </div>

@@ -31,15 +31,10 @@ class Budaya extends Model
     {
         return $this->hasMany('App\Models\AdatLahiran');
     }
-    
+
     public function adatPernikahan()
     {
         return $this->hasMany('App\Models\AdatPernikahan');
-    }
-
-    public function pakaian()
-    {
-        return $this->hasMany('App\Models\Pakaian');
     }
 
     public function senjata()
@@ -66,14 +61,34 @@ class Budaya extends Model
     {
         return $this->hasMany('App\Models\TradisiNugal');
     }
-    
+
     public function tradisiHudoq()
     {
         return $this->hasMany('App\Models\TradisiHudoq');
     }
-    
+
     public function tradisiBelikong()
     {
         return $this->hasMany('App\Models\TradisiBelikong');
+    }
+
+    public function getLatestPengetahuan($limit = null)
+    {
+        $items = collect($this->senjata()->get())
+            ->concat($this->sejarah()->get())
+            ->concat($this->alatMusik()->get())
+            ->concat($this->rumahAdat()->get())
+            ->concat($this->adatLahiran()->get())
+            ->concat($this->adatPernikahan()->get())
+            ->concat($this->ceritaRakyat()->get())
+            ->concat($this->tradisiTabuko()->get())
+            ->concat($this->tradisiNugal()->get())
+            ->concat($this->tradisiHudoq()->get())
+            ->concat($this->tradisiBelikong()->get())
+            ->sortBy('created_at');
+        if ($limit) {
+            return $items->take($limit);
+        }
+        return $items;
     }
 }
