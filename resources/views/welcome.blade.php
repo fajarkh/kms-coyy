@@ -38,7 +38,7 @@
                                                 <a href="#">SISTEM MANAJEMEN PENGETAHUAN TRADISI SUKU BUDAYA DAYAK BAHAU </a>
                                             </div>
                                             <div class="home_slider_item_link">
-                                                <a href="#" class="trans_200">Baca Selengkapnya
+                                                <a href="{{ route('profil') }}" class="trans_200">Baca Selengkapnya
                                                     <svg version="1.1" id="link_arrow_1"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"

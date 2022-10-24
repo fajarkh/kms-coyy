@@ -6,9 +6,9 @@
                     <div class="logo"><a href="/">KMS Suku Dayak</a></div>
                     <nav class="main_nav">
                         <ul>
-                            <li class="active"><a href="/">Beranda</a></li>
-                            <li class="menu_mm"><a href="{{ route('kategori', 'Semua') }}">Kategori</a></li>
-                            <li class="menu_mm"><a href="{{ route('profil') }}">Profil</a></li>
+                            <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="/">Beranda</a></li>
+                            <li class="menu_mm {{ request()->is('*kategori*') ? 'active' : '' }}"><a href="{{ route('kategori', 'Semua') }}">Kategori</a></li>
+                            <li class="menu_mm {{ request()->is('*profil*') ? 'active' : '' }}"><a href="{{ route('profil') }}">Profil</a></li>
                             <li class="menu_mm"><a href="{{ route('login') }}">Login</a></li>
                         </ul>
                     </nav>
