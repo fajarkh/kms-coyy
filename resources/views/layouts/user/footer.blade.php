@@ -3,7 +3,7 @@
         <div class="row row-lg-eq-height">
             <div class="col-lg-9 order-lg-1 order-2">
                 <div class="footer_content">
-                    <div class="footer_logo"><a href="#">KMS Suku Dayak</a></div>
+                    <div class="footer_logo"><a href="#">KMS Dayak Bahau</a></div>
                     {{-- <div class="footer_social">
                                 <ul>
                                     <li class="footer_social_facebook"><a href="#"><i class="fa fa-facebook"
@@ -25,7 +25,7 @@
                         Copyright &copy;
                         <script>
                             document.write(new Date().getFullYear());
-                        </script> KMS Suku Dayak | All rights reserved</a>
+                        </script> KMS Dayak Bahau | All rights reserved</a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>
                 </div>
