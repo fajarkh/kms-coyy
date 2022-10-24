@@ -35,7 +35,8 @@
                                     <div class="col">
                                         <div class="home_slider_content">
                                             <div class="home_slider_item_title">
-                                                <a href="#">SISTEM MANAJEMEN PENGETAHUAN TRADISI SUKU BUDAYA DAYAK BAHAU </a>
+                                                <a href="#">SISTEM MANAJEMEN PENGETAHUAN TRADISI SUKU BUDAYA DAYAK
+                                                    BAHAU </a>
                                             </div>
                                             <div class="home_slider_item_link">
                                                 <a href="{{ route('profil') }}" class="trans_200">Baca Selengkapnya
@@ -122,98 +123,130 @@
                                 </div>
                                 <div class="section_content">
                                     <div class="grid clearfix">
-
-                                        <!-- Largest Card With Image -->
                                         <div class="card card_largest_with_image grid-item">
-                                            <img class="card-img-top" src="{{ asset('avision/images/post_1.jpg') }}"
-                                                alt="https://unsplash.com/@cjtagupa">
+                                            <img class="card-img-top" src="{{ $itemProfil[0]->urlGambar() }}">
                                             <div class="card-body">
-                                                <div class="card-title"><a href="#">How Did van Gogh’s
-                                                        Turbulent Mind Depict One of the Most Complex Concepts in
-                                                        Physics? 1</a></div>
-                                                <p class="card-text">Pick the yellow peach that looks like a
-                                                    sunset with its red, orange, and pink coat skin, peel it off with
-                                                    your teeth. Sink them into unripened...</p>
-                                                <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29,
-                                                        2017 at 9:48 am</span></small>
+                                                <div class="card-title">
+                                                    <a href="{{ $itemProfil[0]->urlPost() }}">
+                                                        {{ $itemProfil[0]->nama }}
+                                                    </a>
+                                                </div>
+                                                <p class="card-text">{{ $itemProfil[0]->ringkasan }}</p>
                                             </div>
                                         </div>
 
-                                        <!-- Small Card Without Image -->
-                                        <div class="card card_default card_small_no_image grid-item">
+                                        @php
+                                            $modelitemPengetahuan0 = class_basename($itemPengetahuan[0]);
+                                            $imageSrcPengetahuan0 = $itemPengetahuan[0]->gambar ? asset('storage/uploads/' . Str::of($modelitemPengetahuan0)->snake() . '/' . $itemPengetahuan[0]->gambar) : asset('avision/images/no-image.png');
+                                        @endphp
+                                        <div class="card card_default card_small_with_background grid-item">
+                                            <div class="card_background"
+                                                style="background-image:url({{ $imageSrcPengetahuan0 }})">
+                                            </div>
                                             <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="#">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most Complex
-                                                        Concepts in Physics? 2</a></div>
-                                                <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29,
-                                                        2017 at 9:48 am</span></small>
+                                                <div class="card-title card-title-small">
+                                                    <a href="#">{{ $itemPengetahuan[0]->nama }}</a>
+                                                </div>
+                                                <small class="post_meta">
+                                                    {{ preg_replace('/(?<!\ )[A-Z]/', ' $0', class_basename($itemPengetahuan[0])) }}
+                                                </small>
                                             </div>
                                         </div>
 
                                         <!-- Small Card With Background -->
+                                        @php
+                                            $modelitemPengetahuan1 = class_basename($itemPengetahuan[1]);
+                                            $imageSrcPengetahuan1 = $itemPengetahuan[1]->gambar ? asset('storage/uploads/' . Str::of($modelitemPengetahuan1)->snake() . '/' . $itemPengetahuan[1]->gambar) : asset('avision/images/no-image.png');
+                                        @endphp
                                         <div class="card card_default card_small_with_background grid-item">
                                             <div class="card_background"
-                                                style="background-image:url({{ asset('avision/images/post_4.jpg') }})">
+                                                style="background-image:url({{ $imageSrcPengetahuan1 }})">
                                             </div>
                                             <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="#">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most Complex
-                                                        Concepts in Physics? 3</a></div>
-                                                <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29,
-                                                        2017 at 9:48 am</span></small>
-                                            </div>
-                                        </div>
-
-                                        <!-- Small Card With Image -->
-                                        <div class="card card_small_with_image grid-item">
-                                            <img class="card-img-top" src="{{ asset('avision/images/post_2.jpg') }}"
-                                                alt="https://unsplash.com/@jakobowens1">
-                                            <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="#">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most Complex
-                                                        Concepts in Physics? 4</a></div>
-                                                <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29,
-                                                        2017 at 9:48 am</span></small>
+                                                <div class="card-title card-title-small">
+                                                    <a href="#">{{ $itemPengetahuan[1]->nama }}</a>
+                                                </div>
+                                                <small class="post_meta">
+                                                    {{ preg_replace('/(?<!\ )[A-Z]/', ' $0', class_basename($itemPengetahuan[1])) }}
+                                                </small>
                                             </div>
                                         </div>
 
                                         <!-- Small Card With Image -->
                                         <div class="card card_small_with_image grid-item">
-                                            <img class="card-img-top" src="{{ asset('avision/images/post_3.jpg') }}"
-                                                alt="https://unsplash.com/@jannerboy62">
+                                            <img class="card-img-top" src="{{ $itemProfil[2]->urlGambar() }}">
                                             <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="#">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most Complex
-                                                        Concepts in Physics? 5</a></div>
-                                                <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29,
-                                                        2017 at 9:48 am</span></small>
+                                                <div class="card-title card-title-small">
+                                                    <a href="{{ $itemProfil[2]->urlPost() }}">
+                                                        {{ $itemProfil[2]->nama }}
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
 
-                                        <!-- Default Card No Image -->
-
-                                        <div class="card card_default card_default_no_image grid-item">
+                                        <!-- Small Card With Image -->
+                                        <div class="card card_small_with_image grid-item">
+                                            <img class="card-img-top" src="{{ $itemProfil[1]->urlGambar() }}">
                                             <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="#">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most 6</a></div>
+                                                <div class="card-title card-title-small">
+                                                    <a href="{{ $itemProfil[1]->urlPost() }}">
+                                                        {{ $itemProfil[1]->nama }}
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
 
-                                        <!-- Default Card No Image -->
-
-                                        <div class="card card_default card_default_no_image grid-item">
+                                        @php
+                                            $modelitemPengetahuan2 = class_basename($itemPengetahuan[2]);
+                                            $imageSrcPengetahuan2 = $itemPengetahuan[2]->gambar ? asset('storage/uploads/' . Str::of($modelitemPengetahuan2)->snake() . '/' . $itemPengetahuan[2]->gambar) : asset('avision/images/no-image.png');
+                                        @endphp
+                                        <div class="card card_default card_small_with_background grid-item">
+                                            <div class="card_background"
+                                                style="background-image:url({{ $imageSrcPengetahuan2 }})">
+                                            </div>
                                             <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="#">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most 7</a></div>
+                                                <div class="card-title card-title-small">
+                                                    <a href="#">{{ $itemPengetahuan[2]->nama }}</a>
+                                                </div>
+                                                <small class="post_meta">
+                                                    {{ preg_replace('/(?<!\ )[A-Z]/', ' $0', class_basename($itemPengetahuan[2])) }}
+                                                </small>
                                             </div>
                                         </div>
 
-                                        <!-- Default Card No Image -->
-
-                                        <div class="card card_default card_default_no_image grid-item">
+                                        @php
+                                            $modelitemPengetahuan3 = class_basename($itemPengetahuan[3]);
+                                            $imageSrcPengetahuan3 = $itemPengetahuan[3]->gambar ? asset('storage/uploads/' . Str::of($modelitemPengetahuan3)->snake() . '/' . $itemPengetahuan[3]->gambar) : asset('avision/images/no-image.png');
+                                        @endphp
+                                        <div class="card card_default card_small_with_background grid-item">
+                                            <div class="card_background"
+                                                style="background-image:url({{ $imageSrcPengetahuan3 }})">
+                                            </div>
                                             <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="#">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most 8</a></div>
+                                                <div class="card-title card-title-small">
+                                                    <a href="#">{{ $itemPengetahuan[3]->nama }}</a>
+                                                </div>
+                                                <small class="post_meta">
+                                                    {{ preg_replace('/(?<!\ )[A-Z]/', ' $0', class_basename($itemPengetahuan[3])) }}
+                                                </small>
+                                            </div>
+                                        </div>
+
+                                        @php
+                                            $modelitemPengetahuan4 = class_basename($itemPengetahuan[4]);
+                                            $imageSrcPengetahuan4 = $itemPengetahuan[4]->gambar ? asset('storage/uploads/' . Str::of($modelitemPengetahuan4)->snake() . '/' . $itemPengetahuan[4]->gambar) : asset('avision/images/no-image.png');
+                                        @endphp
+                                        <div class="card card_default card_small_with_background grid-item">
+                                            <div class="card_background"
+                                                style="background-image:url({{ $imageSrcPengetahuan4 }})">
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="card-title card-title-small">
+                                                    <a href="#">{{ $itemPengetahuan[4]->nama }}</a>
+                                                </div>
+                                                <small class="post_meta">
+                                                    {{ preg_replace('/(?<!\ )[A-Z]/', ' $0', class_basename($itemPengetahuan[4])) }}
+                                                </small>
                                             </div>
                                         </div>
 

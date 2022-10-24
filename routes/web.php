@@ -11,7 +11,9 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', function () {
-    return view('welcome');
+    $itemProfil = App\Models\Profil::orderBy('updated_at', 'desc')->get()->take(3);
+    $itemPengetahuan = \App\Models\Budaya::first()->getLatestPengetahuan()->random(5);
+    return view('welcome', compact('itemProfil', 'itemPengetahuan'));
 });
 
 Route::get('/kategori/{kategori}', 'FrontController@kategori')->name('kategori');

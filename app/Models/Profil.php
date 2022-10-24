@@ -26,12 +26,17 @@ class Profil extends Model
 
     public function getRingkasanAttribute()
     {
-        return Str::limit(strip_tags($this->deskripsi), 300, '...');
+        return Str::limit(strip_tags($this->deskripsi), 150, '...');
     }
 
     public function urlGambar()
     {
         return $this->gambar ? asset("storage/uploads/{$this->getTable()}/{$this->gambar}") : asset('avision/images/no-image.png');
+    }
+
+    public function urlPost()
+    {
+        return route('post.show', ['model' => 'Profil', 'id' => $this->id]);
     }
 
     public function getKategoriAttribute()
