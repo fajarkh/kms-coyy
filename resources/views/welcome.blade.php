@@ -103,30 +103,22 @@
 
                             <div class="blog_section">
                                 <div class="section_panel d-flex flex-row align-items-center justify-content-start">
-                                    <div class="section_title">Jangan Lewatkan</div>
-                                    <div class="section_tags ml-auto">
+                                    <div class="section_title">Beranda</div>
+                                    {{-- <div class="section_tags ml-auto">
                                         <ul>
                                             <li class="active"><a href="#">Semua</a></li>
                                             <li><a href="#">History</a></li>
-                                            {{-- <li><a href="#">vogue</a></li>
-                                            <li><a href="#">health & fitness</a></li>
-                                            <li><a href="#">travel</a></li> --}}
                                         </ul>
-                                    </div>
-                                    <div class="section_panel_more">
+                                    </div> --}}
+                                    {{-- <div class="section_panel_more">
                                         <ul>
                                             <li>lebih
-                                                {{-- <ul>
+                                                <ul>
                                                     <li><a href="#">new look 2018</a></li>
-                                                    <li><a href="#">street fashion</a></li>
-                                                    <li><a href="#">business</a></li>
-                                                    <li><a href="#">recipes</a></li>
-                                                    <li><a href="#">sport</a></li>
-                                                    <li><a href="#">celebrities</a></li>
-                                                </ul> --}}
+                                                </ul>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <div class="section_content">
                                     <div class="grid clearfix">
@@ -234,29 +226,21 @@
                             <div class="blog_section">
                                 <div class="section_panel d-flex flex-row align-items-center justify-content-start">
                                     {{-- <div class="section_title">Apa Yang Populer</div> --}}
-                                    <div class="section_tags ml-auto">
+                                    {{-- <div class="section_tags ml-auto">
                                         <ul>
                                             <li class="active"><a href="#">semua</a></li>
-                                            {{-- <li><a href="#">history</a></li>
-                                            <li><a href="#">vogue</a></li>
-                                            <li><a href="#">health & fitness</a></li>
-                                            <li><a href="#">travel</a></li> --}}
+                                            <li><a href="#">history</a></li>
                                         </ul>
-                                    </div>
-                                    <div class="section_panel_more">
+                                    </div> --}}
+                                    {{-- <div class="section_panel_more">
                                         <ul>
                                             <li>lebih
-                                                {{-- <ul>
+                                                <ul>
                                                     <li><a href="#">new look 2018</a></li>
-                                                    <li><a href="#">street fashion</a></li>
-                                                    <li><a href="#">business</a></li>
-                                                    <li><a href="#">recipes</a></li>
-                                                    <li><a href="#">sport</a></li>
-                                                    <li><a href="#">celebrities</a></li>
-                                                </ul> --}}
+                                                </ul>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 {{-- <div class="section_content">
                                     <div class="grid clearfix">
@@ -607,9 +591,9 @@
                             </div>
 
                         </div>
-                        <div class="load_more">
+                        {{-- <div class="load_more">
                             <div id="load_more" class="load_more_button text-center trans_200">Selengkapnya</div>
-                        </div>
+                        </div> --}}
                     </div>
                     <!-- Sidebar -->
                     @include('layouts.user.sidebar')
