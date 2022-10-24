@@ -8,7 +8,7 @@
                         <ul>
                             <li class="active"><a href="/">Beranda</a></li>
                             <li class="menu_mm"><a href="{{ route('kategori', 'Semua') }}">Kategori</a></li>
-                            <li class="menu_mm"><a href="{{ route('kategori', 'Sejarah') }}">Tentang</a></li>
+                            <li class="menu_mm"><a href="{{ route('profil') }}">Profil</a></li>
                             <li class="menu_mm"><a href="{{ route('login') }}">Login</a></li>
                         </ul>
                     </nav>

@@ -72,6 +72,11 @@ class Budaya extends Model
         return $this->hasMany('App\Models\TradisiBelikong');
     }
 
+    public function profil()
+    {
+        return $this->hasMany('App\Models\Profil');
+    }
+
     public function getLatestPengetahuan($limit = null)
     {
         $items = collect($this->senjata()->get())

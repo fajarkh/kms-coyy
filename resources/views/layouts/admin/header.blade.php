@@ -14,11 +14,11 @@
         <!-- Messages Dropdown Menu -->
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
-                <i class="far fa-bell"></i>
-                <span class="badge badge-danger navbar-badge">3</span>
+                <i class="fa fa-home"></i>
+                {{-- <span class="badge badge-danger navbar-badge">3</span> --}}
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                <a href="#" class="dropdown-item">
+                {{-- <a href="#" class="dropdown-item">
                     <!-- Message Start -->
                     <div class="media">
                         <img src="{{ asset('lte/dist/img/user1-128x128.jpg') }}" alt="User Avatar"
@@ -34,8 +34,8 @@
                     </div>
                     <!-- Message End -->
                 </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
+                <div class="dropdown-divider"></div> --}}
+                {{-- <a href="#" class="dropdown-item">
                     <!-- Message Start -->
                     <div class="media">
                         <img src="{{ asset('lte/dist/img/user8-128x128.jpg') }}" alt="User Avatar"
@@ -51,8 +51,8 @@
                     </div>
                     <!-- Message End -->
                 </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
+                <div class="dropdown-divider"></div> --}}
+                {{-- <a href="#" class="dropdown-item">
                     <div class="media">
                         <img src="{{ asset('lte/dist/img/user3-128x128.jpg') }}" alt="User Avatar"
                             class="img-size-50 img-circle mr-3">
@@ -66,8 +66,8 @@
                         </div>
                     </div>
                 </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+                <div class="dropdown-divider"></div> --}}
+                <a href="{{ url('/') }}" class="dropdown-item dropdown-footer">Kunjungi Beranda</a>
             </div>
         </li>
 

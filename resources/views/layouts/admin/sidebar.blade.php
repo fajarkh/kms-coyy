@@ -3,6 +3,15 @@
     <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
+                <a href="{{ route('profil.index') }}"
+                    class="nav-link {{ request()->is('*profil*') ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>Profil
+                        {{-- <span class="right badge badge-danger">New</span> --}}
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a href="{{ route('ceritarakyat.index') }}"
                     class="nav-link {{ request()->is('*ceritarakyat*') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-th"></i>

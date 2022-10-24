@@ -130,7 +130,7 @@
                                             <div class="card-body">
                                                 <div class="card-title"><a href="#">How Did van Gogh’s
                                                         Turbulent Mind Depict One of the Most Complex Concepts in
-                                                        Physics?</a></div>
+                                                        Physics? 1</a></div>
                                                 <p class="card-text">Pick the yellow peach that looks like a
                                                     sunset with its red, orange, and pink coat skin, peel it off with
                                                     your teeth. Sink them into unripened...</p>
@@ -144,7 +144,7 @@
                                             <div class="card-body">
                                                 <div class="card-title card-title-small"><a href="#">How Did
                                                         van Gogh’s Turbulent Mind Depict One of the Most Complex
-                                                        Concepts in Physics?</a></div>
+                                                        Concepts in Physics? 2</a></div>
                                                 <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29,
                                                         2017 at 9:48 am</span></small>
                                             </div>
@@ -158,7 +158,7 @@
                                             <div class="card-body">
                                                 <div class="card-title card-title-small"><a href="#">How Did
                                                         van Gogh’s Turbulent Mind Depict One of the Most Complex
-                                                        Concepts in Physics?</a></div>
+                                                        Concepts in Physics? 3</a></div>
                                                 <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29,
                                                         2017 at 9:48 am</span></small>
                                             </div>
@@ -171,7 +171,7 @@
                                             <div class="card-body">
                                                 <div class="card-title card-title-small"><a href="#">How Did
                                                         van Gogh’s Turbulent Mind Depict One of the Most Complex
-                                                        Concepts in Physics?</a></div>
+                                                        Concepts in Physics? 4</a></div>
                                                 <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29,
                                                         2017 at 9:48 am</span></small>
                                             </div>
@@ -184,7 +184,7 @@
                                             <div class="card-body">
                                                 <div class="card-title card-title-small"><a href="#">How Did
                                                         van Gogh’s Turbulent Mind Depict One of the Most Complex
-                                                        Concepts in Physics?</a></div>
+                                                        Concepts in Physics? 5</a></div>
                                                 <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29,
                                                         2017 at 9:48 am</span></small>
                                             </div>
@@ -195,7 +195,7 @@
                                         <div class="card card_default card_default_no_image grid-item">
                                             <div class="card-body">
                                                 <div class="card-title card-title-small"><a href="#">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most</a></div>
+                                                        van Gogh’s Turbulent Mind Depict One of the Most 6</a></div>
                                             </div>
                                         </div>
 
@@ -204,7 +204,7 @@
                                         <div class="card card_default card_default_no_image grid-item">
                                             <div class="card-body">
                                                 <div class="card-title card-title-small"><a href="#">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most</a></div>
+                                                        van Gogh’s Turbulent Mind Depict One of the Most 7</a></div>
                                             </div>
                                         </div>
 
@@ -213,7 +213,7 @@
                                         <div class="card card_default card_default_no_image grid-item">
                                             <div class="card-body">
                                                 <div class="card-title card-title-small"><a href="#">How Did
-                                                        van Gogh’s Turbulent Mind Depict One of the Most</a></div>
+                                                        van Gogh’s Turbulent Mind Depict One of the Most 8</a></div>
                                             </div>
                                         </div>
 
