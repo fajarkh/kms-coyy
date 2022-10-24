@@ -90,7 +90,7 @@
                                                                 <div class="card-body">
                                                                     <div class="card-title card-title-small">
                                                                         <a
-                                                                            href="{{ $item->url }}">{{ $item->nama }}</a>
+                                                                            href="{{ $searchResults->url }}">{{ $item->nama }}</a>
                                                                     </div>
                                                                     <small class="post_meta">
                                                                         <a href="#">Admin</a>
