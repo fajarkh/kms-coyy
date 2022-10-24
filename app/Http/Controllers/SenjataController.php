@@ -40,8 +40,7 @@ use UploadFileTrait;
         $item = Senjata::create([
             'nama'     => $request->nama,
             'gambar'     => $this->upload('senjata', $request->file('gambar')),
-            'deskripsi'   => $request->deskripsi,
-            'budaya_id'   => $request->budaya_id
+            'deskripsi'   => $request->deskripsi
         ]);
         return $this->redirectWith($item->wasRecentlyCreated ? 'insert' : 'error');
     }
@@ -52,7 +51,6 @@ use UploadFileTrait;
         $dataUpdate = [
             'nama'     => $request->nama,
             'deskripsi'   => $request->deskripsi,
-            'budaya_id'   => $request->budaya_id
         ];
         if ($request->file('gambar') != "") {
             $dataUpdate['gambar'] = $this->upload('senjata', $request->file('gambar'), $item->gambar);

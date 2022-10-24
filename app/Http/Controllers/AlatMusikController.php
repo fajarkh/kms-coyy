@@ -39,8 +39,7 @@ class AlatMusikController extends Controller
         $item = AlatMusik::create([
             'nama'     => $request->nama,
             'gambar'     => $this->upload('alat_musik', $request->file('gambar')),
-            'deskripsi'   => $request->deskripsi,
-            'budaya_id'   => $request->budaya_id
+            'deskripsi'   => $request->deskripsi
         ]);
         return $this->redirectWith($item->wasRecentlyCreated ? 'insert' : 'error');
     }
@@ -50,8 +49,7 @@ class AlatMusikController extends Controller
         $item = AlatMusik::findOrFail($id);
         $dataUpdate = [
             'nama'     => $request->nama,
-            'deskripsi'   => $request->deskripsi,
-            'budaya_id'   => $request->budaya_id
+            'deskripsi'   => $request->deskripsi
         ];
         if ($request->file('gambar') != "") {
             $dataUpdate['gambar'] = $this->upload('alat_musik', $request->file('gambar'), $item->gambar);

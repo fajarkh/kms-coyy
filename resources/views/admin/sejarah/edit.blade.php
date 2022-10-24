@@ -1,6 +1,5 @@
 @extends('layouts.admin.master')
 @section('content-header', 'Edit ' . $title . ' - ' . $item->nama)
-{{-- @php $deskripsi = str_replace('&', '&amp;', $item->deskripsi); @endphp --}}
 @section('content')
     <div class="col-md-12">
         <div class="card border-0 shadow rounded">

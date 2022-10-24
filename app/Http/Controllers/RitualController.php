@@ -37,8 +37,7 @@ class RitualController extends Controller
         $item = Ritual::create([
             'nama'     => $request->nama,
             'deskripsi'   => $request->deskripsi,
-            'jenis'   => $request->jenis,
-            'budaya_id'   => $request->budaya_id
+            'jenis'   => $request->jenis
         ]);
         return $this->redirectWith($item->wasRecentlyCreated ? 'insert' : 'error');
     }
@@ -49,8 +48,7 @@ class RitualController extends Controller
         $dataUpdate = [
             'nama'     => $request->nama,
             'deskripsi'   => $request->deskripsi,
-            'jenis'   => $request->jenis,
-            'budaya_id'   => $request->budaya_id
+            'jenis'   => $request->jenis
         ];
         return $this->redirectWith($item->update($dataUpdate)  ? 'update' : 'error');
     }

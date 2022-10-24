@@ -40,8 +40,7 @@ class RumahAdatController extends Controller
         $item = RumahAdat::create([
             'nama'     => $request->nama,
             'gambar'     => $this->upload('rumah_adat', $request->file('gambar')),
-            'deskripsi'   => $request->deskripsi,
-            'budaya_id'   => $request->budaya_id
+            'deskripsi'   => $request->deskripsi
         ]);
         return $this->redirectWith($item->wasRecentlyCreated ? 'insert' : 'error');
     }
@@ -51,8 +50,7 @@ class RumahAdatController extends Controller
         $item = RumahAdat::findOrFail($id);
         $dataUpdate = [
             'nama'     => $request->nama,
-            'deskripsi'   => $request->deskripsi,
-            'budaya_id'   => $request->budaya_id
+            'deskripsi'   => $request->deskripsi
         ];
         if ($request->file('gambar') != "") {
             $dataUpdate['gambar'] = $this->upload('rumah_adat', $request->file('gambar'), $item->gambar);

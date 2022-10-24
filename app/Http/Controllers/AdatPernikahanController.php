@@ -39,8 +39,7 @@ class AdatPernikahanController extends Controller
         $item = AdatPernikahan::create([
             'nama'     => $request->nama,
             'gambar'     => $this->upload('adat_pernikahan', $request->file('gambar')),
-            'deskripsi'   => $request->deskripsi,
-            'budaya_id'   => $request->budaya_id
+            'deskripsi'   => $request->deskripsi
         ]);
         return $this->redirectWith($item->wasRecentlyCreated ? 'insert' : 'error');
     }
@@ -50,8 +49,7 @@ class AdatPernikahanController extends Controller
         $item = AdatPernikahan::findOrFail($id);
         $dataUpdate = [
             'nama'     => $request->nama,
-            'deskripsi'   => $request->deskripsi,
-            'budaya_id'   => $request->budaya_id
+            'deskripsi'   => $request->deskripsi
         ];
         if ($request->file('gambar') != "") {
             $dataUpdate['gambar'] = $this->upload('adat_pernikahan', $request->file('gambar'), $item->gambar);
