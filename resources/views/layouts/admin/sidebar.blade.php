@@ -37,14 +37,14 @@
                     {{-- <span class="right badge badge-danger">New</span> --}}
                 </a>
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a href="{{ route('rumahadat.index') }}"
                     class="nav-link {{ request()->is('*rumahadat*') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-th"></i>
                     <p>Rumah Adat</p>
-                    {{-- <span class="right badge badge-danger">New</span> --}}
+                    <span class="right badge badge-danger">New</span>
                 </a>
-            </li>
+            </li> --}}
             <li class="nav-item">
                 <a href="{{ route('adatlahiran.index') }}"
                     class="nav-link {{ request()->is('*adatlahiran*') ? 'active' : '' }}">

@@ -17,7 +17,9 @@ class HomeController extends Controller
         $countPengetahuan = 0;
         $countAdmin = User::where('level', 1)->get()->count();
         $models = [
-            'CeritaRakyat', 'Sejarah', 'AlatMusik', 'RumahAdat', 'AdatLahiran', 'AdatPernikahan', 'Senjata', 'TradisiTabuko',
+            'CeritaRakyat', 'Sejarah', 'AlatMusik',
+            // 'RumahAdat',
+            'AdatLahiran', 'AdatPernikahan', 'Senjata', 'TradisiTabuko',
             'TradisiNugal',
             'TradisiHudoq',
             'TradisiBelikong',

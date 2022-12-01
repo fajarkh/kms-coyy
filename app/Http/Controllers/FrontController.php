@@ -58,7 +58,7 @@ class FrontController extends Controller
             ->registerModel(\App\Models\Sejarah::class, $searchOn)
             ->registerModel(\App\Models\AdatLahiran::class, $searchOn)
             ->registerModel(\App\Models\AlatMusik::class, $searchOn)
-            ->registerModel(\App\Models\RumahAdat::class, $searchOn)
+            // ->registerModel(\App\Models\RumahAdat::class, $searchOn)
             ->registerModel(\App\Models\CeritaRakyat::class, $searchOn)
             ->registerModel(\App\Models\AdatLahiran::class, $searchOn)
             ->registerModel(\App\Models\AdatPernikahan::class, $searchOn)
@@ -81,7 +81,7 @@ class FrontController extends Controller
         if ($type == 'Semua') {
             $model = Budaya::with([
                 'alatmusik',
-                'rumahAdat',
+                // 'rumahAdat',
                 'adatLahiran',
                 'adatPernikahan',
                 'senjata',
