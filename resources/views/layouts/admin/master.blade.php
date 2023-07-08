@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('lte/dist/css/adminlte.min.css') }}">
     <link rel="stylesheet" href="{{ asset('lte/plugins/toastr/toastr.min.css') }}">
     <link rel="stylesheet" href="{{ asset('lte/plugins/sweetalert2/sweetalert2.min.css') }}">
+    @livewireStyles
     @stack('req-css')
 </head>
 
@@ -61,6 +62,7 @@
     <script src="{{ asset('lte/plugins/toastr/toastr.min.js') }}"></script>
     <script src="{{ asset('lte/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
 
+    @livewireScripts
     <script>
         @if (session()->has('success'))
             toastr.success('{{ session('success') }}', 'BERHASIL!');
