@@ -17,6 +17,7 @@
         href="{{ asset('avision/plugins/jquery.mb.YTPlayer-3.1.12/jquery.mb.YTPlayer.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('avision/styles/main_styles.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('avision/styles/responsive.css') }}">
+    @livewireStyles
 </head>
 
 <body>

@@ -50,6 +50,7 @@
 <script src="{{ asset('avision/plugins/parallax-js-master/parallax.min.js') }}"></script>
 <script src="{{ asset('avision/js/post.js') }}"></script>
 <script src="{{ asset('avision/js/custom.js') }}"></script>
+@livewireScripts
 
 <script>
     $('div.deskripsi p').addClass('post_p');

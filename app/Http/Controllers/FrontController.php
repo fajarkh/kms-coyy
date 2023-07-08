@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Budaya;
-use App\Models\Profil;
 use Illuminate\Http\Request;
 use Spatie\Searchable\Search;
 
@@ -37,8 +36,7 @@ class FrontController extends Controller
 
     public function profil()
     {
-        $items = Profil::orderBy('updated_at', 'desc')->get()->take(3);
-        return view('layouts.user.profil', compact('items'));
+        return view('layouts.user.profil');
     }
 
     public function show($model, $id)
