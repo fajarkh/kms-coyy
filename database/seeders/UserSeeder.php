@@ -17,7 +17,6 @@ class UserSeeder extends Seeder
         User::create([
             'name' => 'admin',
             'email' => 'admin@kmsdayak.com',
-            // 'password' => bcrypt('admin123'),
             'password' => app('hash')->make('admin123'),
             'level' => '1',
             'remember_token' => Str::random(10)

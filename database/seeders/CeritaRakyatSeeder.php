@@ -12,13 +12,7 @@ class CeritaRakyatSeeder extends Seeder
     {
         $faker = Faker::create('id_ID');
         for ($i = 1; $i <= 50; $i++) {
-            CeritaRakyat::create(
-                [
-                    'nama' => $faker->name,
-                    'deskripsi' => $faker->text,
-                    'budaya_id' => 1,
-                ]
-            );
+            CeritaRakyat::create(['nama' => $faker->words(3, true), 'deskripsi' => $faker->text, 'budaya_id' => 1]);
         }
     }
 }
